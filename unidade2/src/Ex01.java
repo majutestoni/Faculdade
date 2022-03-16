@@ -120,9 +120,7 @@ public class Ex01 {
         int minutos = (segundos % 3600) / 60;
         int sobra = ((segundos % 3600) % 60);
 
-        System.out.println();
-
-
+        System.out.println("O tempo foi, em horas: " + horas + ", em minutos: " + minutos + ", em segundos: " + sobra);
 
         scan.close();
 
