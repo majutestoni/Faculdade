@@ -37,7 +37,7 @@ public class Ex02 {
         float p2x2 = scan.nextFloat();
         float p2y2 = scan.nextFloat();
 
-        
+        scan.close();
 
     }
 
