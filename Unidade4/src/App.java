@@ -95,6 +95,49 @@ public class App {
         }
         System.out.println("O valor que vai pagar: " + valorPagar);
 
+        // Ex09 -> Dois valores
+        System.out.println("Informe o valor 1");
+        int inteiro1 = scan.nextInt();
+        System.out.println("Informe o valor 2");
+        int inteiro2 = scan.nextInt();
+
+        int multiplos = inteiro1 % inteiro2;
+        if (multiplos == 0) { // falta ou caso, exemplo, 2/4
+            System.out.println("São multiplos");
+        } else {
+            System.out.println("Não são multiplos");
+        }
+
+        // Ex 10 -> tres filhos -> Qual é o caçula
+        System.out.println("Digite a idade dos 3 filhos");
+        int idadeMarquinhos = scan.nextInt();
+        int idadeZezinho = scan.nextInt();
+        int idadeLuluzinha = scan.nextInt();
+
+        if ((idadeMarquinhos < idadeZezinho) && (idadeMarquinhos < idadeLuluzinha)) {
+            System.out.println("caçula: Marquinhos");
+        } else if (idadeZezinho < idadeLuluzinha) {
+            System.out.println("caçula: Zezinho");
+        } else {
+            System.out.println("caçula: Luluzinha");
+        }
+
+        // Ex11 -> Comparar anos para serem gemeos, ou tri ou apenas irmões
+        System.out.println("Digite a ano do filho 1");
+        int ano1 = scan.nextInt();
+        System.out.println("Digite a ano do filho 2");
+        int ano2 = scan.nextInt();
+        System.out.println("Digite a ano do filho 3");
+        int ano3 = scan.nextInt();
+
+        if ((ano1 == ano2) && (ano1 == ano3)) {
+            System.out.println("São trigemeos");
+        } else if ((ano2 == ano3) || (ano2 == ano1) || (ano1 == ano3)) {
+            System.out.println("São gemeos");
+        } else {
+            System.out.println("são só irmões");
+        }
+
         scan.close();
     }
 }
