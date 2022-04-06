@@ -118,4 +118,35 @@ System.out.println("é isoceles");
             reajuste = salarioFuncionario * 0.07;
             System.out.println("o valor fica com " + (reajuste + salarioFuncionario));
         }
+        
+        //Ex16 -> idades de homens e mulheres
+System.out.println("Digite as idades dos homens");
+int idadeHomem1 = scan.nextInt();
+int idadeHomem2 = scan.nextInt();
+System.out.println("Digite as idades das mulheres");
+int idadeMulher1 = scan.nextInt();
+int idadeMulher2 = scan.nextInt();
+
+int homemMaisVelho = 0;
+int homemMaisNovo = 0;
+int MulherMaisVelha = 0;
+int MulherMaisNova = 0;
+
+if(idadeHomem1 > idadeHomem2){
+homemMaisVelho = idadeHomem1;
+homemMaisNovo = idadeHomem2;
+}else if(idadeHomem2 > idadeHomem1){
+    homemMaisVelho = idadeHomem2;
+    homemMaisNovo = idadeHomem1;
+}
+if(idadeMulher1 > idadeMulher2){
+MulherMaisVelha = idadeHomem1;
+MulherMaisNova = idadeMulher2;
+}else if(idadeMulher2 > idadeMulher1){
+    MulherMaisVelha = idadeMulher2;
+    MulherMaisNova = idadeMulher1;
+}
+
+System.out.println("A soma das idades mais velho e mais nova " + (homemMaisVelho + MulherMaisNova));
+System.out.println("O produto do mais novo com a mais velha " + (homemMaisNovo * MulherMaisVelha));
 
