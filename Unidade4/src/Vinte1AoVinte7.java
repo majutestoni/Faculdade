@@ -92,6 +92,54 @@ public class Vinte1AoVinte7 {
                 break;
         }
 
+        // 24 -> Escolha para apresentar uma ordem
+        System.out.println("Digite 1, 2 ou 3 para receber os valores em ordem");
+        int escolhaOpcao = scan.nextInt();
+
+        switch (escolhaOpcao) {
+            case 1:
+                System.out.println("1, 2, 3");
+                break;
+            case 2:
+                System.out.println("3, 2, 1");
+                break;
+            case 3:
+                System.out.println("2, 3, 1");
+                break;
+            default:
+                break;
+        }
+
+        // 25 -> Opção abre um menu de opções
+        System.out.println("Digite um valor 1");
+        int valor1 = scan.nextInt();
+        System.out.println("Digite um valor 2");
+        int valor2 = scan.nextInt();
+        System.out.println("Agora, no menu escolha uma das opções: 1, 2, 3 e 4");
+        int menuOpcoes = scan.nextInt();
+
+        switch (menuOpcoes) {
+            case 1:
+                System.out.println("A soma é de: " + (valor1 + valor2));
+                break;
+            case 2:
+                System.out.println("A diferença e de: " + (valor1 - valor2));
+                break;
+            case 3:
+                System.out.println("O produto é de: " + (valor1 * valor2));
+                break;
+            case 4:
+                if (valor2 != 0) {
+                    System.out.println("A divisão é de: " + (valor1 / valor2));
+                } else {
+                    System.out.println("valor 2 invalido");
+                }
+                break;
+            default:
+                break;
+        }
+
+        
         scan.close();
     }
 
