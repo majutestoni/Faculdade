@@ -190,4 +190,24 @@ System.out.println("O produto do mais novo com a mais velha " + (homemMaisNovo *
             double valorMulta = valorPrestacao * 0.02 * (dataPagamento - 15);
             System.out.println("O valor pago com multa foi de " + (valorPrestacao + valorMulta));
         }
+        
+                // Ex 19 -> X e Y
+        System.out.println("Digite X");
+        int x = scan.nextInt();
+        System.out.println("Digite Y");
+        int y = scan.nextInt();
+
+        if (x == 0 && y == 0) {
+            System.out.println("Quadrante 0");
+        } else if (x > 0 && y > 0) {
+            System.out.println("Quadrando 1");
+        } else if (x > 0 && y < 0) {
+            System.out.println("Quadrante 2");
+        } else if (x < 0 && y > 0) {
+            System.out.println("Quadrante 3");
+        }else if(x < 0 && y < 0){
+            System.out.println("Quadrante 4");
+        }
+        
+        
 
