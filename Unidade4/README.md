@@ -228,5 +228,28 @@ System.out.println("O produto do mais novo com a mais velha " + (homemMaisNovo *
             System.out.println("Reprovado com conceito E");
         }
         
+                // Ex21 -> IMC
+        System.out.println("Digite a massa em kilogramas");
+        double massa = scan.nextDouble();
+        System.out.println("Digite a altura");
+        double altura = scan.nextDouble();
+
+        double imc = massa / (altura * altura);
+
+        if (imc < 18.5) {
+            System.out.println("magreza");
+        } else if (imc >= 18.5 && imc < 25) {
+            System.out.println("saudavel");
+        } else if (imc >= 25 && imc < 30) {
+            System.out.println("sobrepeso");
+        } else if (imc >= 30 && imc < 35) {
+            System.out.println("obesidade grau I");
+        } else if (imc >= 35 && imc < 40) {
+            System.out.println("obesidade grau II");
+        }else if(imc >= 40){
+            System.out.println("obesidade grau III");
+        }
+        
+        
         
 
