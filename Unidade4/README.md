@@ -175,4 +175,19 @@ System.out.println("O produto do mais novo com a mais velha " + (homemMaisNovo *
         }
         
         
+        // Ex18 -> pagamento com vencimento e desconto
+        System.out.println("Digite o valor da prestação");
+        double valorPrestacao = scan.nextInt();
+        System.out.println("Digite a data de pagamento");
+        int dataPagamento = scan.nextInt();
+
+        if (dataPagamento <= 10) {
+            double valorPagamentoDesconto = valorPrestacao * 0.10;
+            System.out.println("O valor pagoi foi " + (valorPrestacao - valorPagamentoDesconto));
+        }else if(dataPagamento > 10 && dataPagamento <= 15){
+            System.out.println("O valor pago foi de " + (valorPrestacao));
+        }else if(dataPagamento > 15){
+            double valorMulta = valorPrestacao * 0.02 * (dataPagamento - 15);
+            System.out.println("O valor pago com multa foi de " + (valorPrestacao + valorMulta));
+        }
 
