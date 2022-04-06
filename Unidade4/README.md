@@ -103,4 +103,19 @@ System.out.println("é isoceles");
         } else {
             System.out.println("Data não valida");
         }
+        
+                // Ex 15 -> reajuste salarial
+        System.out.println("Digite o salario do funcionario");
+        double salarioFuncionario = scan.nextInt();
+        System.out.println("Digite a quantidade de meses que o funcionario está na empresa");
+        int mesFuncionario = scan.nextInt();
+        double reajuste;
+
+        if (mesFuncionario <= 12) {
+            reajuste = salarioFuncionario * 0.05;
+            System.out.println("o valor fica com " + (reajuste + salarioFuncionario));
+        } else if (mesFuncionario > 12 && mesFuncionario < 49) {
+            reajuste = salarioFuncionario * 0.07;
+            System.out.println("o valor fica com " + (reajuste + salarioFuncionario));
+        }
 
