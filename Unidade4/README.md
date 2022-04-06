@@ -250,6 +250,25 @@ System.out.println("O produto do mais novo com a mais velha " + (homemMaisNovo *
             System.out.println("obesidade grau III");
         }
         
+                // 22 -> switch
+        System.out.println("Digite o numero do curso que voce selecionou: 1, 2 ou 3");
+        int numeroDoCurso = scan.nextInt();
+
+        switch (numeroDoCurso) {
+            case 1:
+                System.out.println("Bacharel em BCC");
+                break;
+            case 2:
+                System.out.println("Licenciado em Computação");
+                break;
+            case 3:
+                System.out.println("Bacharel em Sistemas da Informação");
+                break;
+            default:
+            System.out.println("Valor invalido");
+                break;
+        }
+        
         
         
 
