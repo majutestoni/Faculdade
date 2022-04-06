@@ -150,3 +150,29 @@ MulherMaisNova = idadeMulher2;
 System.out.println("A soma das idades mais velho e mais nova " + (homemMaisVelho + MulherMaisNova));
 System.out.println("O produto do mais novo com a mais velha " + (homemMaisNovo * MulherMaisVelha));
 
+        // Ex17 -> imposto de renda
+        System.out.println("Digite a renda anual");
+        double rendaAnual = scan.nextDouble();
+        System.out.println("Digite o numero de dependentes");
+        int dependentesRenda = scan.nextInt();
+
+        double rendaLiquida = rendaAnual - (rendaAnual * 0.02 * dependentesRenda); // duvida
+        double imposto;
+
+        if (rendaLiquida > 2000) {
+            if (rendaLiquida >= 200 && rendaLiquida <= 5000) {
+                imposto = rendaLiquida * 0.05;
+                System.out.println("O imposto é de " + (imposto));
+            } else if (rendaLiquida > 5000 && rendaLiquida <= 10000) {
+                imposto = rendaLiquida * 0.10;
+                System.out.println("O imposto é de " + (imposto));
+            }else if(rendaLiquida > 10000){
+                imposto = rendaLiquida * 0.15;
+                System.out.println("O imposto é de " + (imposto));
+            }
+        } else {
+            System.out.println("Não paga imposto");
+        }
+        
+        
+
