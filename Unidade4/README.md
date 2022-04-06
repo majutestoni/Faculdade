@@ -54,3 +54,29 @@ System.out.println("é isoceles");
     System.out.println("não é um triangulo");
 }
 
+        // Ex13 -> truco
+        System.out.println("informe 3 cartas");
+        int carta1 = scan.nextInt();
+        int carta2 = scan.nextInt();
+        int carta3 = scan.nextInt();
+
+        int qCartaBoas = 0;
+
+        if (carta1 == 1 || carta1 == 2 || carta1 == 3) {
+            qCartaBoas += 1;
+        }
+        if (carta2 == 1 || carta2 == 2 || carta2 == 3) {
+            qCartaBoas = qCartaBoas + 1;
+        }
+        if (carta3 == 1 || carta3 == 2 || carta3 == 3) {
+            qCartaBoas++;
+        }
+
+        if (qCartaBoas == 1) {
+            System.out.println("Truco");
+        } else if (qCartaBoas == 2) {
+            System.out.println("seis");
+        } else if (qCartaBoas == 3) {
+            System.out.println("nove");
+        }
+
