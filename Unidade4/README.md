@@ -209,5 +209,24 @@ System.out.println("O produto do mais novo com a mais velha " + (homemMaisNovo *
             System.out.println("Quadrante 4");
         }
         
+                // Ex20 -> Notas aluno
+        System.out.println("Digite as 3 notas dos alunos");
+        double notaConceito1 = scan.nextDouble();
+        double notaConceito2 = scan.nextDouble();
+        double notaConceito3 = scan.nextDouble();
+
+        double media = (notaConceito1 + notaConceito2 + notaConceito3) / 3;
+        if (media >= 9) {
+            System.out.println("Aprovado com conceito A");
+        } else if (media >= 7.5 && media < 9) {
+            System.out.println("Aprovado com conceito B");
+        } else if (media >= 6 && media < 7.5) {
+            System.out.println("Aprovado com conceito C");
+        } else if (media >= 4 && media < 6) {
+            System.out.println("Reprovado com conceito D");
+        } else if (media < 4) {
+            System.out.println("Reprovado com conceito E");
+        }
+        
         
 
