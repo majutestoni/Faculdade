@@ -139,7 +139,41 @@ public class Vinte1AoVinte7 {
                 break;
         }
 
-        
+        // Ex26 -> utilizando caracter
+        System.out.println("Escolha uma opção: T -> triangulo, Q -> quadrado, R -> Retangulo, C -> Circulo");
+        char opcaoAreas = scan.nextLine().charAt(0);
+        char convertido = Character.toUpperCase(opcaoAreas);
+        switch (convertido) {
+            case 'T':
+                System.out.println("Digite a base e a altura: ");
+                int base = scan.nextInt();
+                int alturaT = scan.nextInt();
+                System.out.println("A area do triangulo é de: " + ((base * alturaT) / 2));
+                break;
+
+            case 'Q':
+                System.out.println("Digite o lado do quadrado: ");
+                int lado = scan.nextInt();
+                System.out.println("A area do quadrado é de: " + (lado * lado));
+                break;
+
+            case 'R':
+                System.out.println("Digite o lado e a base do retangulo: ");
+                int ladoR = scan.nextInt();
+                int baser = scan.nextInt();
+                System.out.println("A area do retangulo é de: " + (ladoR * baser));
+                break;
+
+            case 'C':
+                System.out.println("Digite o raio do circulo: ");
+                double raio = scan.nextDouble();
+                System.out.println("A area do circulo é de: " + ((raio * raio) * 3.14));
+                break;
+
+            default:
+                break;
+        }
+
         scan.close();
     }
 
