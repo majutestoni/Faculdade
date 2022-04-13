@@ -21,54 +21,47 @@ Exercicios das aulas sobre a Unidade 4 -> Referente a condições de desvios
     !
 }
 
-        // 27 -> Tarefas de estcionamento
-        System.out.println("Digite o dia de chegada");
-        double diaChegada = scan.nextInt();
+        // 27 -> Pedagio estacionamento
         System.out.println("Digite a hora de chegada");
-        double horaChegada = scan.nextDouble();
-        System.out.println("Digite o dia de saida");
-        double diaSaida = scan.nextInt();
+        int horaChegada = scan.nextInt();
+        System.out.println("Digite a minuto de chegada");
+        int minutoChegada = scan.nextInt();
         System.out.println("Digite hora de saida");
-        double horaSaida = scan.nextDouble();
+        int horaSaida = scan.nextInt();
+        System.out.println("Digite minuto de saida");
+        int minutoSaida = scan.nextInt();
+        int qtdHoras = 0;
 
-        double diaFinal = diaSaida - diaChegada;
-        int horaFinal = (int) Math.round(horaSaida - horaChegada);
-
-        if (diaFinal == 0) {
-            switch (horaFinal) {
-                case 0:
-                case 1:
-                case 2:
-                    System.out.println("O valor a pagar é de " + (horaFinal * 5));
-                    break;
-                case 3:
-                case 4:
-                    System.out.println("O valor a pagar é de " + (horaFinal * 7.5));
-                    break;
-                case 5: // precisa passar de 5
-                    System.out.println("O valor a pagar é de " + (horaFinal * 10));
-                    break;
-
-                default:
-                    break;
-            }
-        } else if (diaFinal > 0) {
-            horaFinal = horaFinal * -1;
-            switch (horaFinal) {
-                case 0:
-                case 1:
-                case 2:
-                    System.out.println("O valor a pagar é de " + (horaFinal * 5));
-                    break;
-                case 3:
-                case 4:
-                    System.out.println("O valor a pagar é de " + (horaFinal * 7.5));
-                    break;
-                case 5: // precisa passar de 5
-                    System.out.println("O valor a pagar é de " + (horaFinal * 10));
-                    break;
-
-                default:
-                    break;
-            }
+        if (horaChegada > horaSaida) {
+            qtdHoras = 24 - (horaChegada - horaSaida);
+        } else {
+            qtdHoras = horaSaida - horaChegada;
         }
+        int minuto = 60 - minutoChegada + minutoSaida;
+        if (minuto >= 30) {
+            qtdHoras++;
+        }
+
+        double precoCobrado = 0;
+        switch (qtdHoras) {
+            case 0:
+                System.out.println("Não precisa pagar");
+                break;
+            case 1:
+                precoCobrado = 5.00;
+                break;
+            case 2:
+                precoCobrado = 10.00;
+                break;
+            case 3:
+                precoCobrado = 17.5;
+                break;
+            case 4:
+                precoCobrado = 25.00;
+                break;
+            default:
+                precoCobrado = 25 + (10 * (qtdHoras - 4));
+                break;
+        }
+        System.out.println("quatidade de horas " + qtdHoras);
+        System.out.println("O preço cobrado será de " + precoCobrado);
