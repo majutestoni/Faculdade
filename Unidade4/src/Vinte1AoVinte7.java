@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Vinte1AoVinte7 {
@@ -93,20 +94,52 @@ public class Vinte1AoVinte7 {
         }
 
         // 24 -> Escolha para apresentar uma ordem
-        System.out.println("Digite 1, 2 ou 3 para receber os valores em ordem");
+        System.out.println("Escolha tres numeros inteiros: ");
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        int c = scan.nextInt();
+        System.out.println("Escolha, conforme um numero, a opção que deseja: ");
         int escolhaOpcao = scan.nextInt();
 
         switch (escolhaOpcao) {
             case 1:
-                System.out.println("1, 2, 3");
+                int[] numeros = { a, b, c };
+                Arrays.sort(numeros);
+                for (int numero : numeros)
+                    System.out.println(numero);
                 break;
             case 2:
-                System.out.println("3, 2, 1");
+                if (a > b && a > c && b > c) {
+                    System.out.println(String.format("%s ; %s ; %s", a, b, c));
+                } else if (b > a && b > c && c > a) {
+                    System.out.println(String.format("%s ; %s ; %s", b, c, a));
+                } else if (b > a && b > c && a > c) {
+                    System.out.println(String.format("%s ; %s ; %s", b, a, c));
+                } else if (c > a && c > b && b > a) {
+                    System.out.println(String.format("%s ; %s ; %s", c, b, a));
+                } else if (c > a && c > b && a > b) {
+                    System.out.println(String.format("%s ; %s ; %s", c, a, b));
+                } else if (a > b && a > c && c > b) {
+                    System.out.println(String.format("%s ; %s ; %s", a, c, b));
+                }
                 break;
             case 3:
-                System.out.println("2, 3, 1");
+                if (a > b && a > c && b > c) {
+                    System.out.println(String.format("%s ; %s ; %s", b, a, c));
+                } else if (b > a && b > c && c > a) {
+                    System.out.println(String.format("%s ; %s ; %s", c, b, a));
+                } else if (b > a && b > c && a > c) {
+                    System.out.println(String.format("%s ; %s ; %s", a, b, c));
+                } else if (c > a && c > b && b > a) {
+                    System.out.println(String.format("%s ; %s ; %s", b, c, a));
+                } else if (c > a && c > b && a > b) {
+                    System.out.println(String.format("%s ; %s ; %s", a, c, b));
+                } else if (a > b && a > c && c > b) {
+                    System.out.println(String.format("%s ; %s ; %s", c, a, b));
+                }
                 break;
             default:
+            System.out.println("invalido");
                 break;
         }
 
