@@ -2,6 +2,7 @@
     "java.project.sourcePaths": [
         "unidade3/src",
         "unidade2/src",
-        "Unidade4/src"
+        "Unidade4/src",
+        "Unidade5/src"
     ]
 }
