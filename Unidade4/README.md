@@ -31,3 +31,17 @@ Exercicios das aulas sobre a Unidade 4 -> Referente a condições de desvios
         }
 
 
+//ex 02
+  int somaPar = 0;
+        int somaImpar = 0;
+
+        for (int i = 1; i <= 5; i++) {// alterar para 100
+            if (i % 2 == 0) {
+                somaPar += i;
+            } else {
+                somaImpar += i;
+            }
+        }
+        System.out.println("par " + somaPar);
+        System.out.println("impar " + somaImpar);
+
