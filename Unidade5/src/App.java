@@ -1,5 +1,8 @@
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) throws Exception {
+        Scanner scan = new Scanner(System.in);
         System.out.println("Hello, World!");
 
         // Ex01
@@ -33,5 +36,35 @@ public class App {
             somaTermos += fracao;
         }
         System.out.println("A soma dos termos é " + somaTermos);
+
+        // Ex04 -> Verificar a questão do denominador
+        double numrador = 1;
+        double denominador = 0;
+        double respostaS = 0;
+        double termos;
+        for (int i = 1; i <= 20; i++) {
+            numrador += 2;
+            denominador += 2 + denominador;
+            termos = numrador / denominador;
+            respostaS += termos;
+            System.out.println(numrador);
+            System.out.println(denominador);
+        }
+
+        System.out.println(respostaS);
+
+        // EX06
+        int altura;
+        int contador = 0;
+        for (int i = 1; i <= 20; i++) {
+            System.out.println("Digite sua altura: ");
+            altura = scan.nextInt();
+
+            contador += altura;
+        }
+        double mediaAltura = contador / 20;
+        System.out.println(mediaAltura);
+
+        scan.close();
     }
 }
