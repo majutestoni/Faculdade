@@ -53,6 +53,23 @@ public class App {
 
         System.out.println(respostaS);
 
+        // Ex05
+        // padrao 8 10 16 18 32 64 -> n4 = n1 + n2, n3 = n4 - 2
+        System.out.println("Digite quantas vezes deve repetir ");
+        int vezes = scan.nextInt();
+        int padrao2 = 6;
+        int padrao1 = 6;
+        if (vezes > 2) {
+            for (int i = 0; i <= vezes; i++) {
+                padrao2 += padrao2 - 2;
+                padrao1 = padrao2 - 2;
+                System.out.println(padrao1);
+                System.out.println(padrao2);
+            }
+        } else {
+            System.out.println("valor invalido");
+        }
+
         // EX06
         int altura;
         int contador = 0;
