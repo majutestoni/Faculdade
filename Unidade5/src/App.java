@@ -80,8 +80,6 @@ public class App {
         double mediaAltura = contador / 20;
         System.out.println(mediaAltura);
 
-        scan.close();
-
         // Ex07
         System.out.println("Escreva o valor de n:");
         int n = scan.nextInt();
@@ -119,5 +117,6 @@ public class App {
         }
         int mediaP = contadorP / p;
         System.out.println("O numero negativo é " + pMenor + " a media é " + mediaP);
+        scan.close();
     }
 }
