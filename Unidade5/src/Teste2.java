@@ -4,6 +4,17 @@ public class Teste2 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
+        // Ex10
+
+        // Ex11
+        int intermediario = 1;
+        int biscoitosQuebrados = 0;
+        for (int i = 0; i < 3; i++) {
+            biscoitosQuebrados = biscoitosQuebrados + intermediario;
+            intermediario += 1;
+        }
+        System.out.println(biscoitosQuebrados);
+
         // Ex15 -> While
         System.out.println("Digite o nome do aluno");
         String nome = scan.next();
