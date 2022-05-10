@@ -83,10 +83,9 @@ public class App {
         // Ex07
         System.out.println("Escreva o valor de n:");
         int n = scan.nextInt();
-        int i = 0;
         int nMenor = 0;
         int nMaior = 0;
-        while (i < n) {
+        for (int i = 0; i < n; i++) {
             System.out.println("Digite numeros: ");
             int numerosN = scan.nextInt();
             if (numerosN < nMenor) {
@@ -96,27 +95,59 @@ public class App {
             if (numerosN > nMaior) {
                 nMaior = numerosN;
             }
-            i++;
         }
         System.out.println("O numero menor é " + nMenor + " o numero maior é " + nMaior);
 
         // Ex08
         System.out.println("Escreva o valor de p:");
         int p = scan.nextInt();
-        int j = 0;
         int pMenor = 0;
         int contadorP = 0;
-        while (j < p) {
+        for (int j = 0; j < p; j++) {
             System.out.println("Digite numeros: ");
             int numerosP = scan.nextInt();
             if (numerosP < pMenor && numerosP < 0) {
                 pMenor = numerosP;
             }
             contadorP = contadorP + numerosP;
-            j++;
         }
         int mediaP = contadorP / p;
         System.out.println("O numero negativo é " + pMenor + " a media é " + mediaP);
+
+        // Ex09
+        System.out.println("Informe t: ");
+        int t = scan.nextInt();
+        String teste = "";
+        int contadorT = 0;
+        for (int k = 0; k < t; k++) {
+            System.out.println("Digite o nome: ");
+            String nomeT = scan.next();
+            System.out.println("Digite a idade");
+            int idadeT = scan.nextInt();
+
+            if (idadeT == 18) {
+                teste = teste + ", " + nomeT;
+            }
+            if (idadeT > 20) {
+                contadorT = contadorT + 1;
+            }
+        }
+        System.out.println("Alunos com 18: " + teste);
+        System.out.println("A quantidade de alunos que tem 20 é " + contadorT);
+
+        // Ex12 -> Triangulo de floyd
+        System.out.println("Digite o w");
+        int w = scan.nextInt();
+        int a, b;
+        int c = 1;
+        for (a = 1; a <= w; a++) {
+            for (b = 1; b <= a; b++) {
+                System.out.print(c + " ");
+                c++;
+            }
+            System.out.println();
+        }
+
         scan.close();
     }
 }
