@@ -4,6 +4,8 @@ public class Teste2 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
+
+        //12 e 14 feitos
         // Ex10
 
         // Ex11
@@ -14,6 +16,19 @@ public class Teste2 {
             intermediario += 1;
         }
         System.out.println(biscoitosQuebrados);
+
+        // Ex13
+        System.out.println("Digite quantas paradas ocorreram :");
+        int paradas = scan.nextInt();
+        for (int d = 0; d < paradas; d++) {
+            System.out.println("Digite o odometro");
+            int odometro = scan.nextInt();
+            System.out.println("digite a quantidade de combustivel adicionada: ");
+            int combustivelAdicionado = scan.nextInt();
+
+            // Calculos
+
+        }
 
         // Ex15 -> While
         System.out.println("Digite o nome do aluno");

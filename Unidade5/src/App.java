@@ -148,6 +148,31 @@ public class App {
             System.out.println();
         }
 
+        // Ex14
+        double lucro1 = 0;
+        double lucro2 = 0;
+        double lucro3 = 0;
+        for (int e = 1; e <= 5; e++) {
+            System.out.println("Escreva o preço de compra: ");
+            double PC = scan.nextDouble();
+            System.out.println("Digite o preço de venda");
+            double PV = scan.nextDouble();
+
+            double lucro = (PV - PC) / PC * 100;
+            if (lucro < 10) {
+                lucro1 = lucro1 + 1;
+            }
+            if (lucro <= 10 && lucro <= 20) {
+                lucro2 = lucro2 + 1;
+            }
+            if (lucro > 20) {
+                lucro3 = lucro3 + 1;
+            }
+        }
+        System.out.println("Mercadorias com menos de 10% de lucro: " + lucro1);
+        System.out.println("Mercadorias com mais de 10% e menos de 20% de lucro: " + lucro2);
+        System.out.println("Mercadorias com mais de 20% de lucro: " + lucro3);
+
         scan.close();
     }
 }
