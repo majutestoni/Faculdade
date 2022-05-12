@@ -5,7 +5,7 @@ public class Teste2 {
         Scanner scan = new Scanner(System.in);
 
 
-        //12 e 14 feitos
+        //12, 14, 15, 16, 17
         // Ex10
 
         // Ex11
@@ -27,24 +27,6 @@ public class Teste2 {
             int combustivelAdicionado = scan.nextInt();
 
             // Calculos
-
-        }
-
-        // Ex15 -> While
-        System.out.println("Digite o nome do aluno");
-        String nome = scan.next();
-        while (nome == "fim") {
-            System.out.println("teste");
-            System.out.println("nota1");
-            int nota1 = scan.nextInt();
-            System.out.println("nota2");
-            int nota2 = scan.nextInt();
-
-            int media = (nota1 + nota2) / 2;
-            System.out.println(media);
-
-            System.out.println("Digite o nome do aluno");
-            nome = scan.nextLine();
 
         }
 
