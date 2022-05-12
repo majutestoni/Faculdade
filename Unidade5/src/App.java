@@ -173,6 +173,77 @@ public class App {
         System.out.println("Mercadorias com mais de 10% e menos de 20% de lucro: " + lucro2);
         System.out.println("Mercadorias com mais de 20% de lucro: " + lucro3);
 
+        // Ex15 -> While
+        String nome = "";
+        System.out.println("Digite o nome do aluno");
+        nome = scan.next();
+        while (!nome.equals("fim")) {
+            System.out.println("nota1");
+            int nota1 = scan.nextInt();
+            System.out.println("nota2");
+            int nota2 = scan.nextInt();
+
+            int media = (nota1 + nota2) / 2;
+            System.out.println(media);
+            System.out.println("Digite o nome do aluno");
+            nome = scan.next();
+        }
+
+        // Ex16
+        System.out.println("Digite a altura");
+        double altura16 = scan.nextInt();
+        char sexo;
+        double alturaMulheres = 0;
+        double alturaTotal = 0;
+        int contadorAltura = 0;
+        int contadorAlturaMulheres = 0;
+        while (altura16 != 0) {
+            contadorAltura = contadorAltura + 1;
+            System.out.println("Digite m para masculino e f para feminino:");
+            sexo = scan.next().charAt(0);
+            alturaTotal = alturaTotal + altura16;
+            if (sexo == 'f' || sexo == 'F') {
+                alturaMulheres = alturaMulheres + altura16;
+                contadorAlturaMulheres = contadorAlturaMulheres + 1;
+            }
+            System.out.println("Digite a altura");
+            altura = scan.nextInt();
+        }
+
+        System.out.println("Altura media das mulheres é " + (alturaMulheres / contadorAlturaMulheres));
+        System.out.println("A altura media do grupo é de: " + (alturaTotal / contadorAltura));
+
+        // 17
+        System.out.println("Digite o numero de inscrição: ");
+        int inscricao = scan.nextInt();
+        double alturaAtleta, atletasTotal = 0;
+        int contadorAtleta = 0;
+        double atletaAlto = 0;
+        double atletaBaixo = 0;
+        int inscricaoAlto = 0;
+        int inscricaoBaixo = 0;
+        while (inscricao != 0) {
+            contadorAtleta = contadorAtleta + 1;
+            System.out.println("Qual a altura");
+            alturaAtleta = scan.nextInt();
+            atletasTotal = atletasTotal + alturaAtleta;
+
+            if (alturaAtleta > atletaAlto) {
+                atletaAlto = alturaAtleta;
+                inscricaoAlto = inscricao;
+            }
+            if (alturaAtleta < atletaBaixo) {
+                atletaBaixo = alturaAtleta;
+                inscricaoBaixo = inscricao;
+            }
+
+            System.out.println("Digite o numero de inscrição: ");
+            inscricao = scan.nextInt();
+        }
+        System.out.println("Altura atleta alto " + atletaAlto + " inscrção " + inscricaoAlto);
+        System.out.println("Altura atleta baixo " + atletaBaixo + " inscrção " + inscricaoBaixo);
+        System.out.println("A altura media do grupo: " + (atletasTotal / contadorAtleta));
+
         scan.close();
     }
 }
