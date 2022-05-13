@@ -5,6 +5,7 @@ public class teste {
         Scanner scan = new Scanner(System.in);
 
 
+
         scan.close();
     }
 }

@@ -5,17 +5,8 @@ public class Teste2 {
         Scanner scan = new Scanner(System.in);
 
 
-        //12, 14, 15, 16, 17
+        //11, 12, 14, 15, 16, 17
         // Ex10
-
-        // Ex11
-        int intermediario = 1;
-        int biscoitosQuebrados = 0;
-        for (int i = 0; i < 3; i++) {
-            biscoitosQuebrados = biscoitosQuebrados + intermediario;
-            intermediario += 1;
-        }
-        System.out.println(biscoitosQuebrados);
 
         // Ex13
         System.out.println("Digite quantas paradas ocorreram :");

@@ -135,6 +135,18 @@ public class App {
         System.out.println("Alunos com 18: " + teste);
         System.out.println("A quantidade de alunos que tem 20 é " + contadorT);
 
+        // Ex11
+        int biscoitosQuebrados = 1;
+        int biscoitosQuebradosTotal = 1;
+        int biscoitosQuebradosUltimaHora = 1;
+        for (int tempo = 1; tempo <= 15; tempo++) { // considerar um tempo a mais
+            biscoitosQuebrados = biscoitosQuebradosUltimaHora * 3;
+            biscoitosQuebradosUltimaHora = biscoitosQuebrados;
+            biscoitosQuebradosTotal = biscoitosQuebradosTotal + biscoitosQuebrados;
+
+        }
+        System.out.println(biscoitosQuebradosTotal);
+
         // Ex12 -> Triangulo de floyd
         System.out.println("Digite o w");
         int w = scan.nextInt();
@@ -146,6 +158,7 @@ public class App {
                 c++;
             }
             System.out.println();
+
         }
 
         // Ex14
