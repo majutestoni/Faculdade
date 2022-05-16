@@ -134,7 +134,7 @@ public class App {
         }
         System.out.println("Alunos com 18: " + teste);
         System.out.println("A quantidade de alunos que tem 20 é " + contadorT);
-        
+
         // Ex11
         int biscoitosQuebrados = 1;
         int biscoitosQuebradosTotal = 1;
@@ -296,6 +296,36 @@ public class App {
         System.out.println(
                 "A audiencia do canal 4 é " + audiencia4 + "%, canal 5 " + audiencia5 + "%, canal 9 " + audiencia9
                         + "% e canal 12 " + audiencia12 + "%");
+
+        // 19
+        System.out.println("Informe o valor da compra: ");
+        int valorCompra = scan.nextInt();
+        double valorClientePagar = 0;
+        double contadorLucroLoja = 0;
+        while (valorCompra != 0) {
+            if (valorCompra > 500) {
+                valorClientePagar = valorCompra - (valorCompra * 0.20);
+            } else {
+                valorClientePagar = valorCompra - (valorCompra * 0.15);
+            }
+            System.out.println("O valor que o cliente pagará é de " + valorClientePagar);
+            contadorLucroLoja = contadorLucroLoja + valorClientePagar;
+            System.out.println("Informe o valor da compra: ");
+            valorCompra = scan.nextInt();
+        }
+        System.out.println("A loja ganhará no final do dia " + contadorLucroLoja);
+
+        // 20
+        System.out.println("Digite a quantidade de massa em kg");
+        double massaRadioativo = scan.nextDouble();
+        double massaVidaFim = massaRadioativo / 2;
+        double contadorTempovida = 50;
+        while (massaVidaFim > 0.5) {
+            contadorTempovida = contadorTempovida + 50;
+            massaVidaFim = massaVidaFim / 2;
+        }
+        System.out.println("A massa final de " + massaVidaFim);
+        System.out.println("O tempo de vida foi " + contadorTempovida + " segundos");
 
         scan.close();
     }
