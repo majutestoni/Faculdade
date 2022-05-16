@@ -5,7 +5,7 @@ public class Teste2 {
         Scanner scan = new Scanner(System.in);
 
 
-        //11, 12, 14, 15, 16, 17
+        //11, 12, 14, 15, 16, 17, 18
         // Ex10
 
         // Ex13
