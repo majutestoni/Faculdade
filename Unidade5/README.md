@@ -1,18 +1,20 @@
-## Getting Started
+        // Ex09
+        System.out.println("Informe t: ");
+        int t = scan.nextInt();
+        String teste = "";
+        int contadorT = 0;
+        for (int k = 0; k < t; k++) {
+            System.out.println("Digite o nome: ");
+            String nomeT = scan.next();
+            System.out.println("Digite a idade");
+            int idadeT = scan.nextInt();
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+            if (idadeT == 18) {
+                teste = teste + nomeT + ", ";
+            }
+            if (idadeT > 20) {
+                contadorT = contadorT + 1;
+            }
+        }
+        System.out.println("Alunos com 18: " + teste);
+        System.out.println("A quantidade de alunos que tem 20 é " + contadorT);
