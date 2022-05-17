@@ -327,6 +327,30 @@ public class App {
         System.out.println("A massa final de " + massaVidaFim);
         System.out.println("O tempo de vida foi " + contadorTempovida + " segundos");
 
+        // 21
+        double alturaChico = 1.50;
+        double alturaZe = 1.10;
+        int contadoAnosChicoZe = 0;
+        while (alturaChico > alturaZe) {
+            contadoAnosChicoZe = contadoAnosChicoZe + 1;
+            alturaChico = alturaChico + 0.20;
+            alturaZe = alturaZe + 0.30;
+        }
+        System.out.println("O tempo em anos foi de " + contadoAnosChicoZe);
+
+        // 22
+        System.out.println("Digite o ano que voce quer saber o salario");
+        int anoSalario = scan.nextInt();
+        int anoContratado = 1995;
+        double salarioFuncionario = 2000;
+        double aumentoDeSalario = 0.015;
+        while (anoContratado != anoSalario) {
+            salarioFuncionario = salarioFuncionario + (salarioFuncionario * aumentoDeSalario);
+            aumentoDeSalario = aumentoDeSalario * 2;
+            anoContratado = anoContratado + 1;
+        }
+        System.out.println("O salario finalizou com " + salarioFuncionario);
+
         scan.close();
     }
 }
