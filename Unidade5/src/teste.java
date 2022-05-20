@@ -4,25 +4,22 @@ public class teste {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        // 24
-        System.out.println("Informe o limite de peso diario (KG)");
-        double pesoDePescaLimite = scan.nextDouble();
-        double pesoDePescaLimiteTotal = 0, pesoPeixe = 0;
-        String querContinuarAPescar = "";
+        // 29
+        System.out.println("Informe o valor que deseja");
+        int valorDesejado = scan.nextInt();
+        int valorDesejadoFinal = 0, notasFinais = 0;
+        int cedulas20 = 0, cedulas10 = 0, cedulas5 = 0, cedulas2 = 0, cedulas1 = 0;
+        int notas20 = 0, notas10 = 0, notas5 = 0, notas2 = 0, notas1 = 0;
 
-        while (pesoDePescaLimiteTotal <= pesoDePescaLimite) {
-            System.out.println("deseja informar o peso de mais um peixe: s (SIM) / n (NÃO)?");
-            querContinuarAPescar = scan.next();
-            while (querContinuarAPescar.equals("s")) {
-                System.out.println("Digite o peso do peixe(Em gramas)");
-                pesoPeixe = scan.nextDouble();
+        while (valorDesejado != valorDesejadoFinal) {
 
-                System.out.println(pesoDePescaLimiteTotal);
-                System.out.println("deseja informar o peso de mais um peixe: s (SIM) / n (NÃO)?");
-                querContinuarAPescar = scan.next();
+            if (valorDesejado % 20 == 0) {
+
             }
-            pesoDePescaLimiteTotal = pesoDePescaLimiteTotal + pesoPeixe;
 
+            valorDesejadoFinal = 0;
+            notasFinais = notasFinais + cedulas20 + cedulas10 + cedulas5 + cedulas2 + cedulas1;
+            System.out.println(notasFinais);
         }
 
         scan.close();

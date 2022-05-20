@@ -161,6 +161,31 @@ public class App {
 
         }
 
+        // Ex13
+        System.out.println("Digite o valor do tanque cheio(em litros)");
+        int tanqueCheio = scan.nextInt();
+        int tanqueParada = 0, totalDeReabastecimento = 0;
+        int tanqueAbastecidoParada = 0;
+        int kmPercorrido = 0;
+        int kmMedia = 0, kmMediaTotal = 0;
+
+        System.out.println("Digite quantas paradas ocorreram :");
+        int paradas = scan.nextInt();
+        for (int d = 0; d < paradas; d++) {
+            System.out.println("Informe em quanto está o tanque");
+            tanqueParada = scan.nextInt();
+            tanqueAbastecidoParada = tanqueCheio - tanqueParada;
+            totalDeReabastecimento = totalDeReabastecimento + tanqueAbastecidoParada;
+
+            System.out.println("Informe quantos KM foi percorrido até a parada");
+            kmPercorrido = scan.nextInt();
+            kmMedia = kmPercorrido / tanqueAbastecidoParada;
+            kmMediaTotal = kmMediaTotal + kmMedia;
+
+        }
+        System.out.println("A km média total é de " + kmMediaTotal);
+        System.out.println("E o total abastecido " + totalDeReabastecimento);
+
         // Ex14
         double lucro1 = 0;
         double lucro2 = 0;
@@ -378,6 +403,50 @@ public class App {
             System.out.println("deseja digitar os dados de mais um vendedor: s (SIM) / n (NÃO)");
             maisUmVendedor = scan.next();
         }
+
+        // 24 -> Quer adicionar outro peixe
+        System.out.println("Informe o limite de peso diario (KG)");
+        double pesoDePescaLimite = scan.nextDouble();
+        double pesoDePescaLimiteTotal = 0, pesoPeixe = 0;
+        // String querContinuarAPescar = "";
+
+        while (pesoDePescaLimite >= pesoDePescaLimiteTotal) {
+            // System.out.println("deseja informar o peso de mais um peixe: s (SIM) / n
+            // (NÃO)?");
+            // querContinuarAPescar = scan.next();
+            System.out.println("Digite o peso do peixe(Em gramas)");
+            pesoPeixe = scan.nextDouble();
+
+            pesoDePescaLimiteTotal = pesoDePescaLimiteTotal + pesoPeixe;
+        }
+
+        System.out.println("Limite excedido");
+
+        // 25 -> Só falta a diferença ser ajustada
+        int jogadorD = 0, jogadorE = 0;
+        int jogadorDTotal = 0, jogadorETotal = 0;
+        long diferenca = 0;
+        String jogadorFezPonto = "";
+        while (jogadorDTotal < 21 && jogadorETotal < 21 || diferenca < 2 || diferenca < -2) {
+            System.out.println("Qual jogador fez ponto? ");
+            jogadorFezPonto = scan.next();
+            if (jogadorFezPonto.equals("d")) {
+                System.out.println("JogadorD fez quantos Pontos");
+                jogadorD = scan.nextInt();
+                jogadorDTotal = jogadorDTotal + jogadorD;
+            } else if (jogadorFezPonto.equals("e")) {
+                System.out.println("JogadorE fez quantos Pontos");
+                jogadorE = scan.nextInt();
+                jogadorETotal = jogadorETotal + jogadorE;
+            } else {
+                System.out.println("Invalido");
+            }
+            diferenca = jogadorD - jogadorE;
+            System.out.println(diferenca);
+        }
+
+        System.out.println(jogadorDTotal);
+        System.out.println(jogadorETotal);
 
         scan.close();
     }
