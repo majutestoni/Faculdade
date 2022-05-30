@@ -1,74 +1,80 @@
+import java.util.Scanner;
 
-Exercicios focados em estruturas de repetição (for - while - do while)
+public class Uni06ex05 { // Afinidade de um casal
+    private Uni06ex05() {
+        System.out.println("Respostas = sim, nao e ind");
 
+        Scanner scan = new Scanner(System.in);
 
-public class aulaHoje2 {
-    private aulaHoje2() { // construtor
-        System.out.println("teste1");
-        testeAula();
-        System.out.println("teste2");
+        String moça[] = new String[5];
+
+        respostaMoça(scan, moça);
+
+        scan.close();
     }
 
-    private void testeAula() { // porta de entrada do metodo
-        System.out.println("teste aula");
-        testeAula2();
+    private void respostaMoça(Scanner scan, String moça[]) {
+
+        System.out.println("Gosta de música sertaneja?");
+        moça[0] = scan.next();
+        System.out.println("Gosta de futebol?");
+        moça[1] = scan.next();
+        System.out.println("Gosta de seriados?");
+        moça[2] = scan.next();
+        System.out.println("Gosta de redes sociais?");
+        moça[3] = scan.next();
+        System.out.println("Gosta da Oktoberfest?");
+        moça[4] = scan.next();
+
+        String rapaz[] = new String[5];
+        respostaRapaz(scan, rapaz, moça);
     }
 
-    private void testeAula2() { // porta de entrada do metodo
-        System.out.println("teste aula2");
+    private void respostaRapaz(Scanner scan, String rapaz[], String moça[]) {
+
+        System.out.println("Gosta de música sertaneja?");
+        rapaz[0] = scan.next();
+        System.out.println("Gosta de futebol?");
+        rapaz[1] = scan.next();
+        System.out.println("Gosta de seriados?");
+        rapaz[2] = scan.next();
+        System.out.println("Gosta de redes sociais?");
+        rapaz[3] = scan.next();
+        System.out.println("Gosta da Oktoberfest?");
+        rapaz[4] = scan.next();
+
+        afinidade(moça, rapaz);
+    }
+
+    private void afinidade(String moça[], String rapaz[]) {
+        int contador = 0;
+        for (int i = 0; i < 5; i++) {
+            if (moça[i].equals(rapaz[i])) {
+                contador = contador + 3;
+            } else if (moça[i].equals("ind") || rapaz[i].equals("ind")) {
+                contador = contador + 1;
+            } else {
+                contador = contador - 2;
+            }
+        }
+
+        if (contador == 15) {
+            System.out.println("Casem");
+        } else if (contador > 9 && contador < 15) {
+            System.out.println("Vocês têm muita coisa em comum!");
+        } else if (contador > 4 && contador < 10) {
+            System.out.println("Talvez não dê certo :(");
+        } else if (contador >= 0 && contador < 5) {
+            System.out.println("Vale um encontro.");
+        } else if (contador < 0 && contador > -9) {
+            System.out.println("Melhor não perder tempo");
+        } else if (contador == -10) {
+            System.out.println("Vocês se odeiam!");
+        }
+
     }
 
     public static void main(String[] args) {
-        System.out.println("main'");
-        new aulaHoje2();
-        System.out.println("main2");
+        new Uni06ex05();
     }
 }
-
-public class aulaHoje3 {
-    private aulaHoje3() { // construtor como primeiro metodo
-        System.out.println("teste1");
-        // Assinatura
-        metodoSemSaida();
-        int a = metodoComSaida(); // opcional, não é o mesmo "a", ou seja, não é a mesma variavel
-        // comum usar o mesmo nome
-    }
-
-    private void metodoSemSaida() {
-
-    }
-
-    private int metodoComSaida() { // tirar void e colocar o tipo,o mesmo do retorno por boa pratica
-        int a = 3; // após sair do metodo a varivael a morre
-        return a; // precisa de return, deve ser a ultima linha
-    }
-
-    public static void main(String[] args) {
-        new aulaHoje3();
-    }
-}
-
-public class aulaHoje4 {
-    private aulaHoje4() { // construtor como primeiro metodo
-        System.out.println("teste1");
-        // Assinatura -> Qunatidade e nome dos parametros
-        int a = 2;
-        int b = 3;
-        metodoSemSaida(a, b); // não importa o nome, e sim a ordem dos valores
-        metodoSemSaida(a);
-    }
-
-    private void metodoSemSaida(int a, int b) {
-        metodoSemSaida(a);
-        System.out.println(" b " + b);
-    }
-
-    private void metodoSemSaida(int a) {
-        System.out.println("a " + a);
-    }
-
-    public static void main(String[] args) {
-        new aulaHoje4();
-    }
-}
-
