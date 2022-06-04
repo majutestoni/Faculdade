@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-public class Uni06ex08 {
-    private Uni06ex08() {
+public class Uni06ex09 {
+    private Uni06ex09() {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Informe N");
@@ -30,6 +30,6 @@ public class Uni06ex08 {
     }
 
     public static void main(String[] args) {
-        new Uni06ex08();
+        new Uni06ex09();
     }
 }

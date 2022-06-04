@@ -23,7 +23,13 @@ public class Uni06ex07 {
         for (int i = 0; i < vetor.length; i++) {
             System.out.println("Digite valor");
             vetor[i] = scan.nextInt();
-
+            for (int j = 0; j < vetor.length; j++) {
+                if (vetor[i] == vetor[j]) {
+                    System.out.println("Valor ja existente");
+                    System.out.println("Digite outro valor");
+                    vetor[i] = scan.nextInt();
+                }
+            }
         }
         reordenar(vetor);
     }
