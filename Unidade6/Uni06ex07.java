@@ -15,28 +15,40 @@ public class Uni06ex07 {
         int vetor[] = new int[N];
 
         ler(vetor, scan);
+        reordenar(vetor);
         scan.close();
     }
 
     private void ler(int vetor[], Scanner scan) {
-
+        int intermediaria = 0;
+        int vetPos = 0;
+        boolean inserir = true;
         for (int i = 0; i < vetor.length; i++) {
+            inserir = true;
             System.out.println("Digite valor");
-            vetor[i] = scan.nextInt();
-            for (int j = 0; j < vetor.length; j++) {
-                if (vetor[i] == vetor[j]) {
-                    System.out.println("Valor ja existente");
-                    System.out.println("Digite outro valor");
-                    vetor[i] = scan.nextInt();
+            intermediaria = scan.nextInt();
+
+            for (int j = 0; j < vetPos; j++) {
+                if (intermediaria == vetor[j]) {
+                    System.out.println("Valor ja existente, digite o novo");
+                    inserir = false;
+                    i--;
+                    break;
                 }
             }
+            if (inserir) {
+                vetor[i] = intermediaria;
+                vetPos++;
+            }
+
         }
-        reordenar(vetor);
+
     }
 
     private void reordenar(int vetor[]) {
         int aux = 0;
 
+        // metodo bolha
         for (int i = 0; i < vetor.length; i++) {
             for (int j = 0; j < vetor.length - 1; j++) {
                 if (vetor[j] > vetor[j + 1]) {
