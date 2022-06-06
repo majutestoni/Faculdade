@@ -1,6 +1,4 @@
 
-
-
 import java.util.Scanner;
 
 public class Uni06ex07 {
@@ -24,20 +22,27 @@ public class Uni06ex07 {
     private void ler(int vetor[], Scanner scan) {
         int intermediaria = 0;
         int vetPos = 0;
+        boolean inserir = true;
         for (int i = 0; i < vetor.length; i++) {
+            inserir = true;
             System.out.println("Digite valor");
             intermediaria = scan.nextInt();
 
             for (int j = 0; j < vetPos; j++) {
                 if (intermediaria == vetor[j]) {
                     System.out.println("Valor ja existente, digite o novo");
-                    intermediaria = scan.nextInt();
+                    inserir = false;
+                    i--;
+                    break;
                 }
             }
-            
-            vetor[i] = intermediaria;
-            vetPos++;
+            if (inserir) {
+                vetor[i] = intermediaria;
+                vetPos++;
+            }
+
         }
+
     }
 
     private void reordenar(int vetor[]) {
