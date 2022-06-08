@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Uni06ex08 {
@@ -13,10 +14,9 @@ public class Uni06ex08 {
 
         double vetor[] = new double[N];
         int vetAuxiliar[] = new int[N];
-        double vetFinal[] = new double[N];
 
         ler(vetor, scan, vetAuxiliar);
-        mostrar(vetAuxiliar, vetor, vetFinal);
+        mostrar(vetAuxiliar, vetor);
         scan.close();
     }
 
@@ -37,16 +37,32 @@ public class Uni06ex08 {
         }
     }
 
-    private void mostrar(int vetAuxiliar[], double vetor[], double vetFinal[]) {
-        for (int i = 0; i < vetor.length; i++) {
-            for (int j = 0; j < vetor.length; j++) {
-                if (vetor[i] == vetor[j]) {
+    private void mostrar(int vetAuxiliar[], double vetor[]) {
+        int contador = 0;
+        double vetFinal[] = new double[vetor.length];
+        int vetAuxiliar2[] = new int[vetAuxiliar.length];
 
+        // reordenar
+        for (int i = 0; i < vetor.length; i++) {
+            boolean repetidos = false;
+            for (int j = 0; j < contador; j++) {
+                if (vetor[i] == vetFinal[j]) {
+                    repetidos = true;
+                    break;
                 }
             }
-            System.out.println("Numero " + vetor[i] + " frequencia " + vetAuxiliar[i]);
-        }
+            if (!repetidos) {
+                vetFinal[contador++] = vetor[i];
+                vetAuxiliar2[contador++] = vetAuxiliar[i];
+            }
 
+        }
+        vetFinal = Arrays.copyOf(vetor, contador);
+        vetAuxiliar2 = Arrays.copyOf(vetAuxiliar, contador);
+        // apresentar
+        for (int i = 0; i < vetFinal.length; i++) {
+            System.out.println("Numero " + vetFinal[i] + " frequencia " + vetAuxiliar2[i]);
+        }
     }
 
     public static void main(String[] args) {
