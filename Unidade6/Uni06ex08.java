@@ -14,54 +14,46 @@ public class Uni06ex08 {
 
         double vetor[] = new double[N];
         int vetAuxiliar[] = new int[N];
+        boolean auxiliar[] = new boolean[N];
+        for (int i = 0; i < auxiliar.length; i++) {
+            auxiliar[i] = true;
+        }
 
-        ler(vetor, scan, vetAuxiliar);
-        mostrar(vetAuxiliar, vetor);
+        ler(vetor, scan);
+        mostrar(vetAuxiliar, vetor, auxiliar);
+        apresentar(vetor, vetAuxiliar, auxiliar);
         scan.close();
     }
 
-    private void ler(double vetor[], Scanner scan, int vetAuxiliar[]) {
-
-        int aux = 0;
-
+    private void ler(double vetor[], Scanner scan) {
         for (int i = 0; i < vetor.length; i++) {
-            aux = 0;
             System.out.println("digite valores");
             vetor[i] = scan.nextDouble();
-            for (int j = 0; j < vetor.length; j++) {
-                if (vetor[i] == vetor[j]) {
-                    aux++;
-                    vetAuxiliar[i] = aux;
-                }
-            }
         }
     }
 
-    private void mostrar(int vetAuxiliar[], double vetor[]) {
+    private void mostrar(int vetAuxiliar[], double vetor[], boolean auxiliar[]) {
         int contador = 0;
-        double vetFinal[] = new double[vetor.length];
-        int vetAuxiliar2[] = new int[vetAuxiliar.length];
 
         // reordenar
         for (int i = 0; i < vetor.length; i++) {
-            boolean repetidos = false;
-            for (int j = 0; j < contador; j++) {
-                if (vetor[i] == vetFinal[j]) {
-                    repetidos = true;
-                    break;
+            for (int j = 0; j < vetor.length; j++) {
+                if (vetor[i] == vetor[j]) {
+                    vetAuxiliar[i]++;
+                    if (i < j) {
+                        auxiliar[i] = false;
+                    }
                 }
-            }
-            if (!repetidos) {
-                vetFinal[contador++] = vetor[i];
-                vetAuxiliar2[contador++] = vetAuxiliar[i];
             }
 
         }
-        vetFinal = Arrays.copyOf(vetor, contador);
-        vetAuxiliar2 = Arrays.copyOf(vetAuxiliar, contador);
-        // apresentar
-        for (int i = 0; i < vetFinal.length; i++) {
-            System.out.println("Numero " + vetFinal[i] + " frequencia " + vetAuxiliar2[i]);
+    }
+
+    private void apresentar(double vetor[], int vetAuxiliar[], boolean auxiliar[]) {
+        for (int i = 0; i < vetAuxiliar.length; i++) {
+            if (auxiliar[i] == true) {
+                System.out.println("numer " + vetor[i] + " frequencia " + vetAuxiliar[i]);
+            }
         }
     }
 
