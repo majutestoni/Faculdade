@@ -32,11 +32,10 @@ public class Uni06ex09 {
     }
 
     private void reorganizar(int vetorNota[], int vetorGenero[], int vetorIdade[]) {
-        int auxHomem = 0, auxMulher = 0;
+        int auxHomem = 0;
         boolean homem = false, mulher = false;
         int notaMulherMaisNova = 0;
         int soma = 0, somaTotal = 0;
-        int vetorAuxiliar[] = new int[auxMulher];
         int mulheresAcima50 = 0;
 
         for (int i = 0; i < vetorIdade.length; i++) {
@@ -58,12 +57,6 @@ public class Uni06ex09 {
                     if (vetorIdade[i] < vetorIdade[k]) {
                         notaMulherMaisNova = vetorNota[i];
                     }
-                    if (vetorIdade[i] > 50) {
-                        auxMulher++;
-                        for (int g = 0; g < auxMulher; g++) {
-                            vetorAuxiliar[auxMulher] = vetorNota[i];
-                        }
-                    }
                 }
             }
         }
@@ -71,12 +64,12 @@ public class Uni06ex09 {
         double mediaHomens = soma / auxHomem;
         double mediaTotal = somaTotal / vetorNota.length;
 
-        for (int i = 0; i < vetorAuxiliar.length; i++) {
-            System.out.println("a " + vetorAuxiliar[i]);
-            if (vetorAuxiliar[i] > mediaTotal) {
+        for (int i = 0; i < vetorIdade.length; i++) {
+            if (vetorGenero[i] == 2 && vetorIdade[i] > 50) {
                 mulheresAcima50++;
             }
         }
+
         System.out.println("nota media do cinema " + mediaTotal);
         System.out.println("media total homem " + mediaHomens);
         System.out.println("Nota mulher mais nova " + notaMulherMaisNova);
