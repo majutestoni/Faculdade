@@ -26,33 +26,42 @@ public class InteiroPostivo {
         return resultado;
     }
 
-    public int divisores() { // verificar como retorna valores
-        int contador = 0;
-        for (int i = 1; i <= valor; i++) {
+    public String divisores() {
+        int contador = 1;
+        String todosDiivisores = "";
+
+        for (int i = 1; i <= (valor / 2); i++) {
             if (valor % i == 0) {
                 contador++;
+                todosDiivisores = todosDiivisores + i + ", ";
             }
         }
-        return contador;
+
+        todosDiivisores = todosDiivisores + valor + " e a quantidade de divisores é " + contador;
+
+        return todosDiivisores;
     }
 
-    public String fibonacci() {
+    public int[] fibonacci() {
+        int[] vetor = new int[valor];
         int prox = 0;
-        String resultado = "";
         int prox2 = 0;
-        for (int i = 1; i <= valor; i++) {
-            if (i == 1) {
+
+        for (int i = 0; i < valor; i++) {
+            if (i == 0 ) {
                 prox = 1;
                 prox2 = 0;
             } else {
                 prox += prox2;
                 prox2 = prox - prox2;
             }
-
-            resultado = resultado + " " + prox + " ";
+            vetor[i] = prox;
         }
 
-        return resultado;
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.print(vetor[i]);
+        }
+        return vetor;
     }
 
     public float valorH() {
