@@ -17,9 +17,9 @@ public class InteiroPostivo {
         return valor * outro.getValor();
     }
 
-    public int fatorial(int termos) {
+    public int fatorialValor() {
         int resultado = 1;
-        for (int i = termos; i > 0; i--) {
+        for (int i = valor; i > 0; i--) {
             resultado = resultado * i;
         }
 
@@ -74,7 +74,8 @@ public class InteiroPostivo {
 
     public float valorI() {
         float resultado = 0;
-        for (float i = 0; i <= valor; i++) {
+        resultado = valor / 1;
+        for (float i = 1; i <= valor; i++) {
             resultado = resultado - ((valor - i) / (i + 1));
         }
         return resultado;
@@ -83,18 +84,33 @@ public class InteiroPostivo {
     public double valorS() {
         double resultado = 0;
         int termos = 20;
-        for (int i = 0; i < 20; i++) {
-            resultado = Math.pow(valor, (termos - i)) / fatorial(termos); // fatorial revisar
+        resultado = Math.pow(valor, termos);
+        for (int i = 1; i < 21; i++) {
+            resultado += (Math.pow(valor, (termos - i)) / fatorial(i)); // fatorial revisar
+        }
+        return resultado;
+    }
+    
+        public double fatorial(int termos) {
+        int resultado = 1;
+        for (int i = termos; i > 0; i--) {
+            resultado = resultado * i;
         }
 
         return resultado;
     }
 
-    public float valorP() {
-        float resultado = 0;
-        int termos = valor;
-        for (int i = 1; i <= valor; i++) {
-            resultado = resultado + ((fatorial(termos + 2)) / i); // fatorial revisar
+    public double valorP() {
+        double resultado = 0;
+        int termos = 2;
+        resultado = ((fatorial(termos)) / 1);
+        for (int i = 2; i <= valor; i++) {
+            termos = termos + 2;
+            if (i % 2 == 0) {
+                resultado = resultado + ((fatorial(termos)) / i);
+            } else {
+                resultado = resultado - ((fatorial(termos)) / i);
+            }
         }
 
         return resultado;
