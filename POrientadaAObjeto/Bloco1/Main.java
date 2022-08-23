@@ -3,7 +3,7 @@ public class Main {
 
         InteiroPostivo a = new InteiroPostivo();
 
-        a.setValor(5);
-        System.out.println(a.fibonacci());
+        a.setValor(4);
+        System.out.println(a.valorP());
     }
 }
