@@ -1,4 +1,6 @@
-public class InteiroPostivo {
+
+
+public class InteiroPostivo2 {
     private int valor;
 
     public void setValor(int valor) {
@@ -13,7 +15,7 @@ public class InteiroPostivo {
         return valor;
     }
 
-    public int multiplicaInteiro(InteiroPostivo outro) {
+    public int multiplicaInteiro(InteiroPostivo2 outro) {
         return valor * outro.getValor();
     }
 
@@ -90,8 +92,9 @@ public class InteiroPostivo {
         }
         return resultado;
     }
+    
+        public double fatorial(int termos) {
 
-    public double fatorial(int termos) {
         int resultado = 1;
         for (int i = termos; i > 0; i--) {
             resultado = resultado * i;
