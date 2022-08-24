@@ -3,13 +3,19 @@ package ex04list2;
 public class Expressao {
 
     public static boolean estaCorretaSintaticamente(String ex) {
-        //não
-        String[] teste = ex.split("/");
-        String[] teste2 = ex.split("+");
+        int contador1 = 0;
+        int contador2 = 0;
 
-        System.out.println(teste);
-        System.out.println(teste2);
-        if (teste == teste2) {
+        for (int i = 0; i < ex.length(); i++) {
+            if (ex.charAt(i) == '(') {
+                contador1++;
+            }
+            if (ex.charAt(i) == ')') {
+                contador2++;
+            }
+        }
+
+        if (contador1 == contador2) {
             return true;
         } else {
             return false;
