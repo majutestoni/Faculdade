@@ -1,10 +1,13 @@
 package ex06list2;
-
 public class VetorReais {
     private double[] n;
 
     public VetorReais(int tamanho) {
         this.n = new double[tamanho];
+    }
+
+    public double getN(int posicao) {
+        return n[posicao];
     }
 
     public void setN(int posicao, double n) {
@@ -25,20 +28,27 @@ public class VetorReais {
 
     public VetorReais divisao(VetorReais b) {
         VetorReais novo = new VetorReais(n.length);
+        double teste;
         for (int i = 0; i < n.length; i++) {
-            novo[i] = n[i] / b[i];
+            teste = n[i] / b.getN(i);
+            novo.setN(i, teste);
+        }
+
+        for (int i = 0; i < n.length; i++) {
+            System.out.println(novo.getN(i));
         }
 
         return novo;
     }
 
-    public double[] multiplicacaoM(VetorReais b) {
-        int tamanho = b.length - 1;
-        double[] novo = new double[n.length];
-        novo[0] = n[0] * b[tamanho];
+    public VetorReais multiplicacaoM(VetorReais b) {
+        int tamanho = n.length;
+        VetorReais novo = new VetorReais(n.length);
         tamanho--;
-        for (int i = 1; i < b.length; i++) {
-            novo[i] = n[i] * b[tamanho];
+        double teste = 0;
+        for (int i = 1; i < n.length; i++) {
+            teste = n[i] * b.getN(tamanho);
+            novo.setN(i, teste); 
             tamanho--;
         }
 
