@@ -2,11 +2,11 @@ package ex04list2;
 
 public class Main {
     public static void main(String[] args) {
-        String ex = new String("(a+10)/(23*(10.5-b)-2.59/(b*a))");
+      Expressao exp = new Expressao("(a10)/(23(10.5b)2.59(ba))");
 
-        System.out.println(Expressao.estaCorretaSintaticamente(ex));
-    System.out.println(Expressao.getQtdeDivisores(ex));
-    System.out.println(Expressao.getPosicaoOperador(ex));
+      System.out.println(exp.getPosicaoOperador());
+      System.out.println(exp.getQtdeDivisores());
+      System.out.println(exp.estaCorretaSintaticamente());
     }
 
 }
