@@ -2,7 +2,17 @@ package ex04list2;
 
 public class Expressao {
 
-    public static boolean estaCorretaSintaticamente(String ex) {
+    private String ex;
+
+    public Expressao(String ex) {
+        setEx(ex);
+    }
+
+    public void setEx(String ex) {
+        this.ex = ex;
+    }
+
+    public boolean estaCorretaSintaticamente() {
         int contador1 = 0;
         int contador2 = 0;
 
@@ -22,14 +32,14 @@ public class Expressao {
         }
     }
 
-    public static int getQtdeDivisores(String ex) {
-        String[] teste = ex.split("/");
-        int contador = teste.length - 1;
+    public int getQtdeDivisores() {
+        String[] divisores = ex.split("/");
+        int contador = divisores.length - 1;
 
         return contador;
     }
 
-    public static int getPosicaoOperador(String ex) {
+    public int getPosicaoOperador() {
         int a = ex.indexOf("+");
         int b = ex.indexOf("-");
         int c = ex.indexOf("*");
@@ -41,8 +51,10 @@ public class Expressao {
             return b;
         } else if (c < d) {
             return c;
-        } else {
+        } else if(d > -1){
             return d;
+        }else{
+            return -1;
         }
     }
 }
