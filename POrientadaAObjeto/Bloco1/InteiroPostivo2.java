@@ -39,7 +39,7 @@ public class InteiroPostivo2 {
             }
         }
 
-        todosDiivisores = todosDiivisores + valor + " e a quantidade de divisores é " + contador;
+        todosDiivisores = todosDiivisores + valor + " e a quantidade de divisores é " + contador + "";
 
         return todosDiivisores;
     }
