@@ -24,9 +24,7 @@ public class Obra {
 	public Parecer getParecer(int pos) {
 		return pareceres[pos];
 	}
-	public Parecer getParecerista() {
-		return pareceristas.toString;
-	}
+
 	public Parecer getPareceristaTudo(int pos) {
 		return pareceristas.get(pos);
 	}
