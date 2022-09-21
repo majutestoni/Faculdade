@@ -1,5 +1,3 @@
-package ex01list2;
-
 public class Contribuinte {
 	private String nome;
 	private String cpf;

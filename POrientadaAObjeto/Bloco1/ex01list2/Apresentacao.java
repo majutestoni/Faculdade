@@ -1,7 +1,4 @@
 package ex01list2;
-
-public
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
