@@ -174,6 +174,4 @@ public class Apresentacao {
 		btnConsultaCpf.setBounds(247, 207, 85, 21);
 		frame.getContentPane().add(btnConsultaCpf);
 	}
-}Apresentacao{
-
 }
