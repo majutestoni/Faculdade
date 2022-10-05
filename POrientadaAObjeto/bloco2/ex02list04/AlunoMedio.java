@@ -5,8 +5,9 @@ import java.time.LocalDate;
 public class AlunoMedio extends Aluno {
 	private int ano;
 
-	public AlunoMedio(String nome, LocalDate dataNascimento) {
+	public AlunoMedio(String nome, LocalDate dataNascimento, int ano) {
 		super(nome, dataNascimento);
+		setAno(ano);
 	}
 
 	public int getAno() {
@@ -24,7 +25,7 @@ public class AlunoMedio extends Aluno {
 	}
 
 	public String mostra() {
-		return getAno() + getNome() + getIdade();
+		return getNome() + " está cursando o " + getAno() + "o ano do ensino médio e tem  " + getIdade() + " anos.";
 	}
 
 }
