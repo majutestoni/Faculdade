@@ -1,43 +1,74 @@
 package Trab02;
 
+/* 
+ * Jonathan Ilchemin Ribeiro
+ * Maria Julia Testoni
+ * Martin Lange de Assis
+ */
+
+
 import java.time.LocalDate;
 
 public class Telefone {
-	private Character tipo;
+	private String tipo;
 	private String numero;
 	private String endereco;
 	private LocalDate dataInstalacao;
-	
 	private int ocorrencias;
-	private boolean internet;
-	private Character ramoAtividade;
+	private String internet;
+	private String ramoAtividade;
+	private String cliente;
 
-	public boolean isInternet() {
-		return internet;
+	public String getCliente() {
+		return cliente;
 	}
 
-	public void setInternet(boolean internet) {
-		this.internet = internet;
-	}
-
-	public Character getRamoAtividade() {
-		return ramoAtividade;
-	}
-
-	public void setRamoAtividade(Character ramoAtividade) {
-		ramoAtividade = Character.toUpperCase(ramoAtividade);
-		if(ramoAtividade == 'S' || ramoAtividade == 'C') {			
-			this.ramoAtividade = ramoAtividade;
+	public void setCliente(String cliente) {
+		if (cliente != null && !cliente.isBlank()) {
+			this.cliente = cliente;
+		} else {
+			IllegalArgumentException exc = new IllegalArgumentException("Por favor, digite um nome válido.");
+			throw exc;
 		}
 	}
 
-	public Character getTipo() {
+	public String getInternet() {
+		return internet;
+	}
+
+	public void setInternet(String internet) {
+		internet = internet.toUpperCase();
+		if(internet.equals("SIM") || internet.equals("NAO") || internet.equals("NÃO")) {			
+			this.internet = internet;
+		}else {
+			IllegalArgumentException exc = new IllegalArgumentException(
+					"Inválido");
+			throw exc;
+		}
+	}
+
+	public String getRamoAtividade() {
+		return ramoAtividade;
+	}
+
+	public void setRamoAtividade(String ramoAtividade) {
+		ramoAtividade = ramoAtividade.toUpperCase();
+		if (ramoAtividade.equals("SERVIÇOS") || ramoAtividade.equals("COMÉRCIO")) {
+			this.ramoAtividade = ramoAtividade;
+		} else {
+			IllegalArgumentException exc = new IllegalArgumentException(
+					"Ramo inexistente. Por favor, digite um válido");
+			throw exc;
+		}
+	}
+
+	public String getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(Character tipo) {
-		tipo = Character.toUpperCase(tipo);
-		if (tipo == 'R' || tipo == 'C' || tipo == 'E') {
+	public void setTipo(String tipo) {
+		tipo = tipo.toUpperCase();
+		if (tipo.equals("RESIDENCIAL") || tipo.equals("COMERCIAL") || tipo.equals("ESPECIALIZADO")) {
 			this.tipo = tipo;
 		} else {
 			throw new IllegalArgumentException("Tipo inválido");
@@ -49,9 +80,9 @@ public class Telefone {
 	}
 
 	public void setOcorrencias(int ocorrencias) {
-		if(ocorrencias > 0) {			
+		if (ocorrencias > 0) {
 			this.ocorrencias = ocorrencias;
-		}else {
+		} else {
 			throw new IllegalArgumentException("Número de ocorrências inválido");
 		}
 	}
@@ -89,11 +120,11 @@ public class Telefone {
 	}
 
 	public float getValorMensal() {
-		if (tipo == 'R') {
+		if (tipo.equals("RESIDENCIAL") ) {
 			return 15.00f;
-		} else if (tipo == 'C') {
+		} else if (tipo.equals("COMERCIAL")) {
 			return getValorComercial();
-		} else {
+		} else  {
 			return getValorEspecializado();
 		}
 	}
