@@ -51,7 +51,7 @@ public class Partido {
     public int totalProjApresen() {
         int contador = 0;
         for (Vereador vereador : vereadores) {
-            contador += vereador.getQntProjApresentados();
+            contador += vereador.getProjetoDeLeis().size();
         }
         return contador;
     }

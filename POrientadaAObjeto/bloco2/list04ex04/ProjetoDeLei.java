@@ -33,11 +33,8 @@ public class ProjetoDeLei {
 	}
 
 	public void setDataApresentacao(LocalDate dataApresentacao) {
-		if (dataApresentacao != null) {
-			this.dataApresentacao = dataApresentacao;
-		} else {
-			throw new IllegalArgumentException("Digite uma data.");
-		}
+		this.dataApresentacao = dataApresentacao;
+
 	}
 
 	public LocalDate getDataAprovacao() {
