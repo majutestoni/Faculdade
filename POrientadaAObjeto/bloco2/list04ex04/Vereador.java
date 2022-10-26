@@ -6,14 +6,15 @@ public class Vereador {
     private String nome;
     private Partido partido;
     private ArrayList<ProjetoDeLei> projetosLei;
-    private int qntProjAprovado;
-    private int qntProjApresentados;
-    
+
     public void addProjetodeLei9(ProjetoDeLei p) {
-    	projetosLei.add(p);
+        projetosLei.add(p);
     }
-    
-    
+
+    public ArrayList<ProjetoDeLei> getProjetoDeLeis() {
+        return projetosLei;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -36,29 +37,24 @@ public class Vereador {
     }
 
     public int getQntProjAprovado() {
-        return qntProjAprovado;
-    }
+        int conta = 0;
 
-    public void setQntProjAprovado(int qntProjAprovado) {
-        this.qntProjAprovado++;
-    }
-
-    public int getQntProjApresentados() {
-        return qntProjApresentados;
-    }
-
-    public void setQntProjApresentados(int qntProjApresentados) {
-        this.qntProjApresentados++;
+        for (ProjetoDeLei projeto : this.projetosLei) {
+            if (projeto.getDataAprovacao() != null) {
+                conta++;
+            }
+        }
+        return conta;
     }
 
     public double getIndiceTrabalho() {
-        if (qntProjApresentados < 1) {
+        if (projetosLei.size() < 1) {
             return 0;
-        } else if (qntProjApresentados > 0 && qntProjApresentados <= 5) {
+        } else if (projetosLei.size() > 0 && projetosLei.size() <= 5) {
             return 0.80;
-        } else if (qntProjApresentados >= 6 && qntProjApresentados <= 10) {
+        } else if (projetosLei.size() >= 6 && projetosLei.size() <= 10) {
             return 1;
-        } else if (qntProjApresentados >= 11 && qntProjApresentados <= 17) {
+        } else if (projetosLei.size() >= 11 && projetosLei.size() <= 17) {
             return 1.08;
         } else {
             return 1.22;
@@ -66,10 +62,10 @@ public class Vereador {
     }
 
     public double getDesempenho() {
-        if (getQntProjApresentados() == 0) {
+        if (projetosLei.size() == 0) {
             return 0;
         } else {
-            return (qntProjAprovado / qntProjApresentados) * getIndiceTrabalho();
+            return (getQntProjAprovado() / projetosLei.size()) * getIndiceTrabalho();
         }
     }
 }
