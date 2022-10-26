@@ -50,7 +50,7 @@ public class BoteSalvaVidas extends Embarcacao {
 		if (qtdeColetes >= getQntdPessoas()) {
 			return "Bote OK";
 		} else {
-			return " “Insuficiência de " + getQntdPessoas() + qtdeColetes + " coletes salva-vidas”";
+			return " “Insuficiência de " + (getQntdPessoas() - qtdeColetes) + " coletes salva-vidas”";
 		}
 	}
 

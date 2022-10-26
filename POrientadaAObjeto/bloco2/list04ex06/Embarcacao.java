@@ -1,6 +1,6 @@
 package list04ex06;
 
-public abstract class Embarcacao {
+public abstract class Embarcacao implements AtivoEmRisco {
 	private String registroCapitania;
 	private int qntdPessoas;
 
@@ -9,8 +9,6 @@ public abstract class Embarcacao {
 		setQntdPessoas(qntdPessoas);
 	}
 
-	public abstract String verificaSeguranca();
-
 	public String getRegistroCapitania() {
 		return registroCapitania;
 	}
@@ -18,7 +16,7 @@ public abstract class Embarcacao {
 	public void setRegistroCapitania(String registroCapitania) {
 		if (!registroCapitania.equals(null) && !registroCapitania.isBlank()) {
 			this.registroCapitania = registroCapitania;
-		}else {
+		} else {
 			IllegalArgumentException exc = new IllegalArgumentException("Nome inválido");
 			throw exc;
 		}
