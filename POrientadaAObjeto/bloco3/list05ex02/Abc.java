@@ -9,7 +9,7 @@ public class Abc {
 	public static void main(String[] args) {
 		FileReader entrada;
 		FileWriter saida;
-		int chave = 0;
+		int chave = 3;
 		try {
 			entrada = new FileReader("Nomearquivo.txt");
 			saida = new FileWriter("Nomearquivo.txt-saida");
