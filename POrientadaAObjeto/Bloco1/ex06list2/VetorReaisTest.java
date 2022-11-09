@@ -1,9 +1,8 @@
 package ex06list2;
 
 import static org.junit.Assert.assertEquals;
-import java.util.Arrays;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 class InteiroPositivoTest {
 
