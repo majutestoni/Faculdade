@@ -1,0 +1,137 @@
+package lista02ex01;
+
+public class ListaEncadeada implements Lista {
+
+	private NoLista primeiro;
+	private NoLista ultimo;
+	private int qntElementos;
+
+	public ListaEncadeada() {
+		primeiro = null;
+		ultimo = null;
+		qntElementos = 0;
+	}
+
+	@Override
+	public String exibir() {
+		NoLista p = primeiro;
+		String resp = "[ ";
+		while (p != null) {
+			resp += p.getInfo() + ", ";
+			p = p.getProximo();
+		}
+		return resp += " ]";
+	}
+
+	@Override
+	public void inserir(int valor) {
+		NoLista novo = new NoLista();
+		novo.setInfo(valor);
+		novo.setProximo(primeiro);
+		primeiro = novo;
+
+
+	//	NoLista novo = new NoLista();
+	//	novo.setInfo(valor);
+	//	
+	//	if (this.estaVazia()) {
+	//		primeiro = novo;
+	//	} else {
+	//		ultimo.setInfo(primeiro.getInfo());
+	//		ultimo.setProximo(novo);
+	//		primeiro = novo;
+	//	}
+	//	this.qntElementos++;
+
+		// if (this.estaVazia()) {
+		// this.primeiro = novo;
+		// this.primeiro.setProximo(null);
+		// } else {
+		// ultimo = novo;
+		// primeiro.setProximo(novo);
+		// }
+		// this.qntElementos++;
+
+	}
+
+	public void inserir(int valor, int pos) {
+		if (pos < 0 || pos > qntElementos)
+			throw new IndexOutOfBoundsException("não");
+	}
+
+	@Override
+	public int buscar(int valor) {
+		int cont = 0;
+		NoLista temp = new NoLista();
+		while (primeiro != null && primeiro.getInfo() != valor) {
+
+			if (primeiro.getInfo() == valor) {
+				return cont;
+			}
+			primeiro = primeiro.getProximo();
+			cont++;
+
+		}
+		return -1;
+	}
+
+	@Override
+	public Lista dividir() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void retirar(int valor) {
+		NoLista temp = primeiro;
+		NoLista ant = null;
+		if (primeiro.getInfo() == valor) {
+			primeiro = primeiro.getProximo();
+		} else {
+			while (temp != null && temp.getInfo() != valor) {
+				ant = temp;
+				temp = temp.getProximo();
+			}
+			if (temp != null) {
+				ant.setProximo(temp.getProximo());
+			}
+			if (temp == ultimo) {
+				ultimo = ant;
+			}
+		}
+
+	}
+
+	@Override
+	public boolean estaVazia() {
+		if (this.qntElementos < 1) {
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+
+	@Override
+	public Lista copiar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getTamanho() {
+		return qntElementos;
+	}
+
+	@Override
+	public void concatenar(Lista outraLista) {
+
+	}
+
+	@Override
+	public int pegar(int pos) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
