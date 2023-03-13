@@ -1,4 +1,4 @@
-package lista02ex01;
+package ativ;
 
 public class ListaEncadeada implements Lista {
 
@@ -27,75 +27,85 @@ public class ListaEncadeada implements Lista {
 	public void inserir(int valor) {
 		NoLista novo = new NoLista();
 		novo.setInfo(valor);
-		novo.setProximo(primeiro);
-		primeiro = novo;
-
-
-	//	NoLista novo = new NoLista();
-	//	novo.setInfo(valor);
-	//	
-	//	if (this.estaVazia()) {
-	//		primeiro = novo;
-	//	} else {
-	//		ultimo.setInfo(primeiro.getInfo());
-	//		ultimo.setProximo(novo);
-	//		primeiro = novo;
-	//	}
-	//	this.qntElementos++;
-
-		// if (this.estaVazia()) {
-		// this.primeiro = novo;
-		// this.primeiro.setProximo(null);
-		// } else {
-		// ultimo = novo;
-		// primeiro.setProximo(novo);
-		// }
-		// this.qntElementos++;
+		if (this.estaVazia()) {
+			primeiro = novo;
+		} else {
+			ultimo.setProximo(novo);
+		}
+		ultimo = novo;
+		qntElementos++;
 
 	}
 
 	public void inserir(int valor, int pos) {
-		if (pos < 0 || pos > qntElementos)
-			throw new IndexOutOfBoundsException("não");
+		int cont = 0;
+		NoLista p = primeiro;
+		NoLista ant = null;
+		if (pos == 0) {
+			primeiro.setProximo(primeiro);
+			primeiro.setInfo(valor);
+			qntElementos++;
+		} else {
+			while (p != null && pos != cont) {
+				ant = p;
+				p = p.getProximo();
+				cont++;
+			}
+			if (p != null) {
+				p.setProximo(p);
+				p.setInfo(valor);
+				qntElementos++;
+			}
+		}
 	}
 
 	@Override
 	public int buscar(int valor) {
+		int resp = -1;
+		NoLista p = primeiro;
 		int cont = 0;
-		NoLista temp = new NoLista();
-		while (primeiro != null && primeiro.getInfo() != valor) {
-
-			if (primeiro.getInfo() == valor) {
-				return cont;
+		while (p != null && resp == -1) {
+			if (p.getInfo() == valor) {
+				resp = cont;
 			}
-			primeiro = primeiro.getProximo();
+			p = p.getProximo();
 			cont++;
-
 		}
-		return -1;
+		return resp;
 	}
 
 	@Override
 	public Lista dividir() {
-		// TODO Auto-generated method stub
-		return null;
+		int metade = qntElementos / 2;
+		int cont = 0;
+		NoLista p = primeiro;
+		ListaEncadeada nova = new ListaEncadeada();
+
+		while (cont != metade) {
+			nova.inserir(p.getInfo());
+			this.retirar(p.getInfo());
+			p = p.getProximo();
+			cont++;
+		}
+		return nova;
 	}
 
 	@Override
 	public void retirar(int valor) {
-		NoLista temp = primeiro;
+		NoLista p = primeiro;
 		NoLista ant = null;
 		if (primeiro.getInfo() == valor) {
 			primeiro = primeiro.getProximo();
+			qntElementos--;
 		} else {
-			while (temp != null && temp.getInfo() != valor) {
-				ant = temp;
-				temp = temp.getProximo();
+			while (p != null && p.getInfo() != valor) {
+				ant = p;
+				p = p.getProximo();
 			}
-			if (temp != null) {
-				ant.setProximo(temp.getProximo());
+			if (p != null) {
+				ant.setProximo(p.getProximo());
 			}
-			if (temp == ultimo) {
+			if (p == ultimo) {
 				ultimo = ant;
 			}
 		}
@@ -114,8 +124,13 @@ public class ListaEncadeada implements Lista {
 
 	@Override
 	public Lista copiar() {
-		// TODO Auto-generated method stub
-		return null;
+		ListaEncadeada nova = new ListaEncadeada();
+		NoLista lista = primeiro;
+		while (lista != null) {
+			nova.inserir(lista.getInfo());
+			lista = lista.getProximo();
+		}
+		return nova;
 	}
 
 	@Override
@@ -126,12 +141,26 @@ public class ListaEncadeada implements Lista {
 	@Override
 	public void concatenar(Lista outraLista) {
 
+
 	}
 
 	@Override
 	public int pegar(int pos) {
-		// TODO Auto-generated method stub
-		return 0;
+		if (pos < 0 || pos >= qntElementos) {
+			throw new IndexOutOfBoundsException("não");
+		}
+
+		NoLista p = primeiro;
+		int cont = 0;
+		while (p != null) {
+			if (cont == pos) {
+				return p.getInfo();
+			}
+			p = p.getProximo();
+			cont++;
+		}
+
+		return -1;
 	}
 
 }
