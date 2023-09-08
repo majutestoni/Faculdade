@@ -12,6 +12,8 @@ public class Grafo {
 
 		int[][] matrizCompleta = { { 0, 1, 1, 1 }, { 1, 0, 1, 1 }, { 1, 1, 0, 1 }, { 1, 1, 1, 0 } };
 
+		int[][] matrizBipartida = { { 0, 1, 1, 0 }, { 1, 0, 0, 1 }, { 1, 0, 0, 1 }, { 0, 1, 1, 0 } };
+
 		int[][] matrizRegular = { { 0, 1, 0, 1 }, { 1, 0, 1, 0 }, { 0, 1, 0, 1 }, { 1, 0, 1, 0 } };
 
 		int[][] matrizMultiGrafo = { { 0, 1, 0, 3 }, { 1, 0, 2, 0 }, { 0, 2, 0, 1 }, { 3, 0, 1, 0 } };
@@ -22,15 +24,16 @@ public class Grafo {
 
 		System.out.println(tipoDoGrafo(matriz));
 		System.out.println(tipoDoGrafo(matrizCompleta));
+		System.out.println(tipoDoGrafo(matrizBipartida));
 		System.out.println(tipoDoGrafo(matrizRegular));
 		System.out.println(tipoDoGrafo(matrizMultiGrafo));
 		System.out.println(tipoDoGrafo(matrizNula));
 		System.out.println(tipoDoGrafo(matrizDirigida));
 	}
-	
+
 	/*
-	 * PARA DEFINIR QUANTOS ELEMENTOS VOU TER NA METADE DA MATRIZ:
-	 * ((n*n) - n) / 2 sendo n igual a quantiade de linhas ou colunas
+	 * PARA DEFINIR QUANTOS ELEMENTOS VOU TER NA METADE DA MATRIZ: ((n*n) - n) / 2
+	 * sendo n igual a quantiade de linhas ou colunas
 	 */
 
 	private static String tipoDoGrafo(int[][] matriz) {
@@ -46,6 +49,8 @@ public class Grafo {
 		boolean nulo = true;
 		boolean regular = true;
 		boolean completo = true;
+		boolean talvezBipartido = true;
+		boolean bipartido = false;
 
 		// auxiliar para comparar se é grau regular - parte cima
 		int auxiliarCima = parteCima[0];
@@ -78,7 +83,13 @@ public class Grafo {
 		for (int i : parteMeio) {
 			if (i > 0) {
 				simples = false;
+				talvezBipartido = false;
 			}
+		}
+
+		// bipartido - não pode ter loop, não pode ser ciclo impar
+		if (talvezBipartido) {
+			bipartido = bipartido(matriz);
 		}
 
 		if (nulo) {
@@ -89,7 +100,12 @@ public class Grafo {
 			} else {
 				resp += " não dirigido";
 			}
+			if(bipartido) {
+				resp += ", bipartido";
+			}
 		}
+		
+
 
 		if (simples) {
 			resp += ", simples";
@@ -100,8 +116,8 @@ public class Grafo {
 		} else {
 			resp += ", multigrafo";
 		}
-		
-		if(regular) {
+
+		if (regular) {
 			resp += " e regular";
 		}
 
@@ -239,6 +255,41 @@ public class Grafo {
 		}
 
 		return meio;
+	}
+
+	private static boolean bipartido(int[][] matriz) {
+		// definir cor para cada vertice
+		char[] corVertice = new char[matriz.length];
+
+		for (int i = 0; i < corVertice.length; i++) {
+			corVertice[i] = 'N';
+		}
+
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz[i].length; j++) {
+				if (corVertice[i] == 'N') {
+					if (matriz[i][j] > 0) {
+						corVertice[i] = 'L';
+					} else {
+						corVertice[i] = 'V';
+					}
+				}
+				if (corVertice[i] != 'N') {
+
+					if (matriz[i][j] > 0) {
+						if (corVertice[i] == corVertice[j]) {
+	
+							return false;
+						}
+					}
+				}
+
+			}
+		}
+
+
+		return true;
+
 	}
 
 }
