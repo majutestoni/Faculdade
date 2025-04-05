@@ -8,12 +8,12 @@ import numpy as np
 
 image = cv2.imread('autodromo3.png', cv2.IMREAD_GRAYSCALE)
 
-kernel_cross = cv2.getStructuringElement(cv2.MORPH_CROSS, (3, 3)) 
-kernel_disk_small = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (1,1))
-kernel_disk = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5,5))
+kernel_cross = cv2.getStructuringElement(cv2.MORPH_CROSS, (7, 7)) 
+kernel_disk = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
+
 
 # ======= pré processamento  ===========
-# diferença entre a img original e a com erosão
+# operador basincom limiar 50 e clohole
 img_bas = cv2.subtract(image, 50)
 imagem_clohole = cv2.morphologyEx(img_bas, cv2.MORPH_CLOSE, kernel_cross)
 
@@ -37,6 +37,7 @@ imagem_hmin = cv2.add(imagem_hdome, 50)
 
 # 7 - operador Subm
 imagem_subm = cv2.subtract(imagem_hmin, imagem_closeth)
+imagem_subm = cv2.morphologyEx(imagem_subm, cv2.MORPH_CLOSE, kernel_disk)
 imagem_subm = cv2.convertScaleAbs(imagem_subm)
 
 # ===  detecção ====
@@ -44,16 +45,35 @@ imagem_binaria = cv2.adaptiveThreshold(imagem_subm.astype(np.uint8), 255,
                                        cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
                                        cv2.THRESH_BINARY, 11, 2)
 
+
 # ======== pós processamento
 num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(imagem_binaria, connectivity=8)
 output = np.zeros_like(imagem_binaria)
 
-for i in range(1, num_labels):  # Ignora o fundo
-    if stats[i, cv2.CC_STAT_AREA] >= 500:  # Ajustável
+for i in range(1, num_labels):  
+    if stats[i, cv2.CC_STAT_AREA] >= 8000:  
         output[labels == i] = 255
+        
+kernel_cross = cv2.getStructuringElement(cv2.MORPH_CROSS, (7 ,7))
+imagem_dilatada = cv2.dilate(output, kernel_cross, iterations=1)
 
-# Refinamento morfológico para suavizar
-imagem_pos = cv2.morphologyEx(output, cv2.MORPH_CLOSE, kernel_cross)
+num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(imagem_dilatada, connectivity=8)
+imagem_area_40 = np.zeros_like(imagem_binaria)
+for i in range(1, num_labels):
+    if stats[i, cv2.CC_STAT_AREA] >= 40:
+        imagem_area_40[labels == i] = 255
+        
+imagem_erodida = cv2.erode(imagem_area_40, kernel_cross, iterations=1)
+
+num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(imagem_erodida, connectivity=8)
+imagem_final = np.zeros_like(imagem_binaria)
+for i in range(1, num_labels):
+    if stats[i, cv2.CC_STAT_AREA] >= 700:
+        imagem_final[labels == i] = 255
+
+# ====== Sobreposição
+imagem_rgb = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
+imagem_rgb[imagem_final == 255] = [0, 0, 255]  
 
 
 plt.figure(figsize=(12, 6))
@@ -63,19 +83,25 @@ plt.imshow(image, cmap='gray')
 plt.axis('off')
 
 plt.subplot(2, 3, 2)
-plt.title('Pré-Processamento')
+plt.title('imagem_clohole')
 plt.imshow(imagem_clohole, cmap='gray')
 plt.axis('off')
 
 plt.subplot(2, 3, 3)
-plt.title('Imagem com Subm')
+plt.title('Pré-processamento')
 plt.imshow(imagem_subm, cmap='gray')
 plt.axis('off')
 
 plt.subplot(2, 3, 4)
 plt.title('Pós-Processamento')
-plt.imshow(imagem_pos, cmap='gray')
+plt.imshow(imagem_final, cmap='gray')
 plt.axis('off')
+
+plt.subplot(2, 3, 5)
+plt.title('Sobre-posição')
+plt.imshow(imagem_rgb, cmap='gray')
+plt.axis('off')
+
 
 plt.tight_layout()
 plt.show()
