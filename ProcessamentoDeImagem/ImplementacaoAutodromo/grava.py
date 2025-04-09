@@ -8,18 +8,14 @@ import numpy as np
 
 image = cv2.imread('autodromo.png', cv2.IMREAD_GRAYSCALE)
 
-kernel_cross = cv2.getStructuringElement(cv2.MORPH_CROSS, (7, 7)) 
-kernel_disk = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (7, 7    ))
+kernel_cross = cv2.getStructuringElement(cv2.MORPH_CROSS, (9, 9)) 
+kernel_disk = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (7, 7))
 
-clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(15, 15))
-img_equalizada = clahe.apply(image)
-blur = cv2.bilateralFilter(img_equalizada, 15, 130, 130)
-
-blur_closed = cv2.morphologyEx(blur, cv2.MORPH_CLOSE, kernel_disk)
+blur = cv2.medianBlur(image, 5)
 
 # ======= pré processamento  ===========
 # operador basincom limiar 50 e clohole
-img_bas = cv2.subtract(blur_closed, 50)
+img_bas = cv2.subtract(blur, 50)
 imagem_clohole = cv2.morphologyEx(img_bas, cv2.MORPH_CLOSE, kernel_cross)
 
 # 2 - closeth - sedisk de tamanho 5 - 
