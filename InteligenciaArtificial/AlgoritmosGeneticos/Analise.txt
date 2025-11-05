@@ -1,0 +1,26 @@
+Análise do Algoritmo – Camuflagem Genética
+
+Reprodução Sexual
+
+Modo: dinâmico/salto | Color: 90 | Mutação: 0.046
+
+Resultados estáveis a partir da geração 6.
+
+Ótimo desempenho entre as gerações 10 e 21.
+
+Da geração 22 em diante surgiu uma linha mutante, predominando o branco na geração 38.
+
+Reprodução Assexual
+
+Modo: dinâmico/ruído
+
+Na geração 9, pais totalmente cinza; na 10, surgiram pontos brancos.
+
+Nenhum descendente perfeito — sempre variação entre pontos brancos e pretos.
+
+Com color = 0, o padrão se manteve.
+
+Mutação = 0.1: bons pais apenas nas gerações 22 e 37, porém com instabilidade.
+
+Conclusão
+A forma assexual teve melhor desempenho geral nos pais, mas mostrou instabilidade nas gerações posteriores.
