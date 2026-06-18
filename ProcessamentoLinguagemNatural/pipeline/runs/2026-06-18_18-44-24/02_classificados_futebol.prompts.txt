@@ -1,0 +1,43 @@
+Voce e um classificador de tweets em portugues para um trabalho de analise de sentimentos sobre futebol brasileiro.
+
+Para cada tweet numerado abaixo, decida se ele fala sobre FUTEBOL: partidas, clubes, jogadores, tecnicos, contratacoes, campeonatos, torcida, zoacao entre torcedores etc.
+
+Atencao aos nomes ambiguos: "Sao Paulo", "Santos", "Internacional", "Botafogo", "America" podem ser cidade, bairro, sobrenome ou outro assunto. Nesses casos, so marque true se o contexto for claramente futebol.
+
+Responda APENAS com um JSON valido, com um item para CADA id, no formato:
+[
+  {"id": 1, "futebol": true},
+  {"id": 2, "futebol": false}
+]
+
+Tweets:
+1. Quero distância do Grêmio dessa confraria de abobados!
+2. Camisa 10 do Cruzeiro de Brasil  novo  Alex   para Turquia é o Matheus Pereira   boa sorte
+3. prefiro ser chamada de porca(pq do palmeiras)
+4. Se o fator for só seleção e copa do mundo, minha lista fica assim  1 Garrincha  2 Pelé (só jogou duas e só foi importante em uma ) 3 Romário  4 Ronaldo  5 Jairzinho  6 Didi 7 Rivelino  8 Nilton Santos 9 Zagallo  10 Rivelino   Futebol por futebol. Neymar em 2 e Pelé 1, Garrincha 3
+5. Sem treinador, atacante e goleiro tudo é possível. N lembra do Cruzeiro x Sousa
+6. Lula...um verdadeiro presiDEMENTE e pária internacional
+7. Já que é pra esculachar com o país! Montem uma Chapa desse Renan Santos com aquele outro Reúnam Freitas o petista cassado e protegido do STF, lá do Paraná. Pois os dois servem a um mesmo partido o STF.. é cada uma q eu vejo
+8. São Paulo Apóstolo, por diversos motivos.  Se posso brevemente destacar um aqui, escolho este: o ato de se lembrar de Deus e dos seus amigos em cada momento, na glória e na derrota. Esse amor indelével é um tesouro para mim.  O Messi já aprendeu com ele. Eu quero aprender também.
+9. fiquei com tanta raiva assisti, até os 60min pq tava um porre, ai quando eu desligo a tv pra dormir e acordo PAH 3x1 com um golaço no final   nossa sim! arias joga muito, tenho tanta raiva que ele foi pro palmeiras pqp  com CERTEZA, eles começaram mal mas depois encaixaram
+10. Todos os cursos no fim das contas são interligados, e algum tratam de especificidades, RI trata de tudo isso com foco no âmbito internacional, e nem tudo é feito pra criar efeitos diretos pro mercado de trabalho, pesquisa e construção de conhecimento também é importante
+11. Atlético Mineiro é hexa o que? Mineiro?  Nem sabia que eles tinham 6 títulos, tirando mineiro
+12. Braian Romero se junta ao vigente e máximo campeão do futebol paraguaio. O argentino defendeu as cores do Internacional em um passado não muito distante, porém, não atendeu as expectativas.
+13. Óbvio. Ele joga no Santos
+14. fala agora trouxa  Relação de Jaques Wagner com Master envolve apartamento, show internacional, voos em jatinho e privatização de supermercado
+15. vc ta pedindo mt ficha, será q o cruzeiro vai dar conta de preenche-las kkkk
+16. o que de revolucionário messi fez para merecer ser o melhor? Bicho numa época SEM INTERNET UM NEGAO JOGANDO NA PORRA DO SANTOS colocou o mundo a admirar o seu esporte tornou se celebridade pela sua capacidade de ser espetacular Pelé revolucionou o futebol fez do 10 identidade
+17. "corinthiano" e ao mesmo tempo bolsominion nazista e racista... tem momentos que o analfabetismo de corinthians não conhece limites, que lixo
+18. Locação de Cobertura de Piscina Para Festa em Cajamar SP | Nº 1 em Aluguel de Coberturas Para Piscina em São Paulo e Região - Locação de Coberturas Para Eventos | Campus Coberturas
+19. Com essa copa esqueci totalmente do Vasco! Não sei de nada sobre especulações de jogadores etc.
+20. Ele é um santo no Brasil os políticos em sua maioria são santos kkkk pta q pariu
+21. Eu não aguento mais esse elenco do Vasco, na moralllllll, que nojo
+22. Outro ponto positivo nessa Copa do Mundo é que esquecemos um pouco a merda que é o Vasco.
+23. Você torce pro Vasco.
+24. 17h45 em São Paulo   Globo #CopaNaGlobo 15.0 Record #CidadeAlerta 7.5 SBT #CopaNoSBT 2.9 Band #BrasilUrgente 0.6  Via  @comentandotvbr
+25. Na reportagem diz que parte do elenco está questionando o treinador. Tô cansada desse elenco vagabundo escolher quando joga só pra derrubar treinador. Enquanto isso, o prejudicado é o Vasco.
+26. 3 latas de água da cop (guardei de recordação), 2 bonecos funko do Silvio Santos (ganhei em eventos do sbt), 1 garrafa com 2 dedos de Aperol, 1 tulipa gigante de decoração.
+27. Quem é  Renan Santos???? Misericórdia
+28. Ceará conquistou o acesso antecipado à primeira divisão do Campeonato Brasileiro sub-20.  O Vovôzinho venceu por 3 a 1 o Internacional, de virada, com gols de Enzo, Esli e Ronald.  Trazendo as entrevistas de Israel Paz (diretor da base) e dos autores dos gols: Enzo Ludovico,
+29. SPORT CLUB CORINTHIANS PAULISTA
+30. 17h37 em São Paulo   Globo #CopaNaGlobo 14.0 Record #CidadeAlerta 7.3 SBT #CopaNoSBT 2.7 Band #BrasilUrgente 0.7  Via  @comentandotvbr

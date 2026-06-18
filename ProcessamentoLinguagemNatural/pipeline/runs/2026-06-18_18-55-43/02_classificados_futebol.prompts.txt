@@ -1,0 +1,43 @@
+Voce e um classificador de tweets em portugues para um trabalho de analise de sentimentos sobre futebol brasileiro.
+
+Para cada tweet numerado abaixo, decida se ele fala sobre FUTEBOL: partidas, clubes, jogadores, tecnicos, contratacoes, campeonatos, torcida, zoacao entre torcedores etc.
+
+Atencao aos nomes ambiguos: "Sao Paulo", "Santos", "Internacional", "Botafogo", "America" podem ser cidade, bairro, sobrenome ou outro assunto. Nesses casos, so marque true se o contexto for claramente futebol.
+
+Responda APENAS com um JSON valido, com um item para CADA id, no formato:
+[
+  {"id": 1, "futebol": true},
+  {"id": 2, "futebol": false}
+]
+
+Tweets:
+1. Baixou mais um pouco também!  Mochila CR Flamengo adidas [adidas oficial • mercado livre]  Por R$289,59 ̶(̶R̶$̶4̶9̶9̶)̶ parcelado em 6x sem juros  Compre aqui:  meli.la/2WwNp8h Cupom: MODANOMELI    A promoção pode acabar a qualquer momento!
+2. Suborno envolvendo Soros, Trump, máfia albanesa e narcotráfico internacional. Esse negócio é lavagem de dinheiro do tráfico e só agora caiu na boca do povo por lá. Albânia é extremamente antissemita. As más línguas dizem que o Sultão Louco da Turquia está por trás dos protestos.
+3. Pica no lula, pica no Palmeiras, pica no Trump e vai picando kkkk
+4. 1- Foto 9 De Junho   2- Video 12 De Junho 3- Foto - Print De Um Video Em São Paulo Q Foi? Uma Jogada De Uma Ponte E Veja Como A Mulher Morre De Braços Aberto E Tudo Isso Foi Antes Da Morte Do Oliver Na Onde?  RIO DE JANEIRO E Como Foi? De   É INACREDITÁVEL
+5. Fujam. Alfinetadas nos olhos serão uma experiência menos sofrida. Mais um devaneio pseudo-intelectual na linha de outros,dos medíocres que infetaram tambem o cinema historico. Cenas de palmeiras esvoaçando ao vento 10 minutos e silencio? Temos.
+6. Equipe médica avalia transferência para São Paulo  Clique e saiba mais  hoje.vc/3ju3j  #saúdeebemestar #estadodesaúde #líderindígena #raoni #lúcido #consciente #cuidadosintensivos #jornalhojeemdia
+7. DE VOLTA AOS TREINOS!  Confira o calendário da semana para o futebol profissional do Flamengo!
+8. Mundial 2026: filão Manzambi estava escondido no banco suíço (crónica)  Leia aqui:  brnw.ch/21x3t0L  #futebol #internacional #mundial #suica #bosniaeherzegovina #tarikmuharemovic #rubenvargas #johanmanzambi #granitxhaka #erminmahmic
+9. Ela pagou o frete inter adiantado e recebeu a caixa em janeiro junto com a taxa da RF. Invés de passar ambos valores juntos e também as datas limites, ela passou o valor somente do frete internacional (prazo pra fevereiro) e em março somente que foi informar a taxa
+10. Nardoni tem a alcunha de “melhor 5 da Argentina”. Teve de ser improvisado como 8, e ele e o Racing caíram.  Villasanti sempre foi 5, na Seleção do Paraguai e no Grêmio. É onde melhor joga.
+11. Ele passou a temporada inteira se quebrando a cada 2 jogos  Desfalcou o Santos no Paulistão Inteiro, ficou fora de vários jogos importantes do Santos  Mas não, agora ia ser diferente né? Pqp
+12. Porra  @albaaoficial , Corinthians Futebol Clube vc tá de sacanagem…  Sport Club Corinthians Paulista (SCCP)  Aprende aí
+13. saudades sociedade esportiva palmeiras
+14. FORA TODO MUNDO!!  FORA DO VASCO , ELENCO DE VAGABUNDO!!!
+15. Por mim, quanto mais tempo demorar pro Vasco voltar a entrar em campo melhor.  Paz terrível nessa pausa do Brasileirão. Saudade zero.   Viva a Copa do Mundo e a falta de estresse com aqueles perebas horríveis
+16. EUA protetor do comércio global? Os EUA protegem o comércio global de que? Eles usam o comércio global para atacar e pressionar outros países, os únicos países que têm feito bloqueio naval e pirataria internacional e com isso ameaçando o comércio global é só os EUA e Europa.
+17. Ta bom, agr copiar mais gritos de times além desse do corinthians
+18. Você vive em que mundo? O Corinthians está com mais de 3 bilhões em dívidas e não tem um presidente que não roubou desde 1994. Mas claro, os gaviões são um ótimo órgão fiscalizador né....
+19. Não era jogo do Fluminense
+20. pra mim, as crianças mascotinhas parecem estar vestidas com o uniforme do cruzeiro
+21. Cantei essa pedra logo depois do último jogo do Vasco. Renato não suportaria passar 40 dias na ZONA DE REBAIXAMENTO. Vai fazer o que puder pra ser demitido.
+22. | Santos tenta atravessar a compra de Ian Luccas, que pertence ao Cruzeiro, emprestado ao Athletic, por valores entre 1 e 3M de euros.    O impasse fica na forma de pagamento, já que ambos só aceitam receber o valor do Peixe à vista.      @lucas_musetti  |  @deolhonopeixe
+23. Como foram os jogadores do Flamengo na primeira rodada da Copa do Mundo | Ge
+24. Até quando o Vasco vai ser refem desse bando de perninha?
+25. Acho linda a preta, mas aqui em São Paulo passa a vibe de otario, é assaltado fácil fácil
+26. Mas o time é RUIM!!! Querem que ele fale o quê? kkkkk Só tem bagre nesse time do Vasco rs
+27. A historia ate vai, é boba e pronto  Agr o mapa n da, indefensável, ate quando eu tinha 9 anos quando o jogo lançou eu ja achava o mapa estranho, só Los santos presta, n tem mais nada de interessante pra fazer fora da cidade  Pior crime da rockstar foi ter cancelado as 3 dlcs
+28. fico pra morrer quando uns tonhos torcedores querem emplacar essa daí como amuleto do flamengo ou em placar que ela deu visibilidade pro FLAMENGO? amor ela não é o nosso amuleto supremo totói e Guto!!!
+29. “Inglês” de brega do Porto de Santos…
+30. Jogar uma copo do mundo com 2 quase aposentados , Danilo Santos e Paqueta , é surreal , Danilo e Paqueta não são titulares nem no Equador

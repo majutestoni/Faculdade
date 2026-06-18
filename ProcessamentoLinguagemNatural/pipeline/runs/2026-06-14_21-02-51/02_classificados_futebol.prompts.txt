@@ -1,0 +1,43 @@
+Voce e um classificador de tweets em portugues para um trabalho de analise de sentimentos sobre futebol brasileiro.
+
+Para cada tweet numerado abaixo, decida se ele fala sobre FUTEBOL: partidas, clubes, jogadores, tecnicos, contratacoes, campeonatos, torcida, zoacao entre torcedores etc.
+
+Atencao aos nomes ambiguos: "Sao Paulo", "Santos", "Internacional", "Botafogo", "America" podem ser cidade, bairro, sobrenome ou outro assunto. Nesses casos, so marque true se o contexto for claramente futebol.
+
+Responda APENAS com um JSON valido, com um item para CADA id, no formato:
+[
+  {"id": 1, "futebol": true},
+  {"id": 2, "futebol": false}
+]
+
+Tweets:
+1. Grandes coisas eliminado, no próximo jogo tomaram no cu.  Falando de Textor, que nem no Botafogo tá, descansa e se tá duro, dorme
+2. Como se enfrentar racismo em São Paulo já não fosse o suficiente, também tenho homens perguntando se podem me levar para sair ou se podemos nos encontrar, para depois simplesmente não darem continuidade.  48  horas nesta cidade e estou sendo importunado por todos os lados.
+3. Os 2 laterais do Corinthians são muito melhores que os 3 laterais convocados.  Gustavo Henrique hj BEM melhor que o Leo Pereira.  Breno Bidon hj pratica um nivel de futebol que o Paqueta talvez nunca volte a jogar.   Ontem li que dos 11 titulares, 7 sao do mesmo empresário.
+4. Não faz o menor sentido o que ele diz! Se tivesse culhão diria que o enteado seria o "laranja" da leila no Vasco.  Só que não existe nenhum impedimento, tampouco fraude na relação para o cara ser um sócio oculto.  O Palmeiras é SAF?
+5. Kkkkkkk que cara mais patético. Ele terá pesadelos quando o Vasco for vendido. Mal posso esperar a depressão q esse ser terá
+6. Tirando o fato de que salva sempre a seleção, foi só um dos responsáveis por aquela humilhação que o Botafogo sofreu em pleno Engenhão por 4x3 de virada
+7. passando mal que tem mais coisa do corinthians do que do próprio timekkkkkk a semi da copa do brasil estragou a cabeça do cara
+8. Fluminense é o último time a derrotar Bounou, goleiro de Marrocos e Al-Hilal
+9. Isso não tem absolutamente nada a ver com a “nova geração “.  É só uma mãe estúpida, que como um cachorro adestrado, ensina seu filho jogar algo no lixo. Poderia ser a bandeira dos EUA, do VASCO, mas no caso, foi a bandeira do Orgulho. Ela precisa se preocupar, é nessas famílias
+10. Palmeiras ta aliciando msm clube sem ética nenhuma
+11. Preocupado com o quê? Kkkk  Vasco teve um período de glória curtíssimo há 25 anos. Mais nada.   Metem medo em quem?   5 rebaixamentos, 10 anos sem carioquinha, 15 sem título nacional, quase 30 sem internacional.   Acorda para realidade.
+12. Mais o problema da seleção vai ser sempre um jogador do Flamengo
+13. Postou a estreia dos 2 citados. Só olhar lá. Domingo a noite e vc preocupado com o Palmeiras kkk. Se for bostafoguense, seu time tá falido. Se for flamerdista, tá preocupado demais com o jogador do palmeiras ou do bostafogo.
+14. Grande questão é que ali o Gabarito, taxa de ocupação... já permitem grandes construções como é o caso do próprio condomínio Riviera. Não sei se aquela área tem alguma restrição que seja necessário o uso do potencial construtivo do Vasco.
+15. O Memphis joga no Corinthians, mas o Corinthians foi campeão mundial no Japão, eai?
+16. Olho nele porque? Pro São Paulo ele não vai vir
+17. Eu vou votar no RENAN SANTOS mas eu dou total apoio pro Flávio começar a falar tudo o que for possível, ele mesmo vai tropeçar nas próprias coisas que disser
+18. A base do Palmeiras tem trabalhado no sentido contrário em matéria de formação, trazendo os talentos de volta pro meio, mas quando chega no time principal o Abel não ajuda muito.
+19. Parabéns pelo troféu ganhou do finalista! Kkkkk!!! Finalista esse que foi o campeão, enquanto o Flamengo foi AMASSADO pelo Bayern logo nas oitavas! KAKAKAKAKA!!! E o Fluminense colocou quem mesmo na roda? Pois foi o que tomou taca do Chelsea! Kkkk!
+20. Acho que tô com vontade de fazer uma viagem internacional sozinha, faz tempo que não rola, mas tb quero viajar com o  @RGoncalveSilva  e tá muito caro ficar viajando sempre
+21. Quero saber quem do Vasco comeu a mulher do Bap.
+22. Ai ai são paulo
+23. A Shein está oferecendo frete grátis (nacional e internacional) para algumas contas. Verifique se você recebeu.  Se você tem uma nova conta, ainda pode aproveitar um cupom de até % e frete grátis:  onelink.shein.com/33/5joyg4abg1sc
+24. Santos celebra mês do Orgulho LGBT+ com programação cultural até o fim de junho; confira:  glo.bo/nv31q70 #g1
+25. tudo de nova York faz aquela cidade parecer são Paulo so que do bem
+26. "ain que não sei o que são paulo" vão se foder vcs
+27. Mano, se um dia teu time ser vice do meu como foi para o Fluminense em algum tempinho atrás, tu se joga da ponte Rio-Niterói. Num mete essa!
+28. Casa em são Paulo
+29. O otário acha mesmo que o nanico botafogo tem escolha de pra quem tem que vender kkkkkk teu timinho tá falido pô, tá vendendo almoço pra comprar a janta, tá com 6 transfer ban, não tá disputando nenhum título importante pq já foi eliminado, ou seja? Tá completamente fudido.
+30. Ele nasceu em 1997…  Como pode ser uma homenagem ao Juninho Pernambucano? Nessa época ele jogava no VASCO…

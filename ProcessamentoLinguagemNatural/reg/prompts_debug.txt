@@ -1,0 +1,125 @@
+Voce e um normalizador de texto para um pipeline de analise de sentimentos sobre tweets de futebol em portugues.
+
+Para cada tweet recebido, devolva uma versao normalizada seguindo ESTAS regras:
+
+1. Corrija apenas erros ortograficos obvios e expanda APENAS as seguintes abreviacoes (lista fechada):
+   "vc"->"voce", "vcs"->"voces", "pq"->"porque", "pqp"->"pqp" (mantenha),
+   "tb"/"tbm"->"tambem", "q"->"que", "n"->"nao", "tmj"->"tamo junto",
+   "pra"->"para", "pro"->"para o", "msm"->"mesmo", "tlg"->"tipo logo".
+   NAO expanda mais nada. Em particular, NAO altere formatos de hora ("20h" continua "20h"),
+   data, numeros, siglas, nomes de times ou jogadores.
+
+2. NUNCA substitua girias, palavroes, xingamentos ou expressoes de raiva/zoacao por sinonimos
+   neutros. Eles carregam o sentimento que precisamos preservar. Mantenha EXATAMENTE as palavras
+   emocionais do original ("fudido", "foda", "lixo", "merda", "porra", "caralho", etc).
+
+3. Remova URLs, mencoes (@usuario) e hashtags vazias. Hashtags com conteudo semantico viram
+   texto (#golaco -> golaco).
+
+4. Mantenha emojis que carreguem sentimento.
+
+5. NAO altere o sentimento, ironia, sarcasmo nem o alvo do tweet (time, jogador).
+
+6. NAO invente conteudo. Se o tweet nao tiver texto util (so pontuacao, so nomes proprios,
+   so numeros), devolva o texto original inalterado.
+
+7. PRESERVE TODOS OS ACENTOS E CEDILHAS exatamente como no original.
+   "nao" no original continua "nao"; "não" no original continua "não".
+   NUNCA troque "grêmio" por "gremio", "são" por "sao", "também" por "tambem",
+   "araújo" por "araujo", etc.
+
+8. PRESERVE censura intencional do usuario. Se a palavra original tem digitos no
+   lugar de letras ou asteriscos (ex: "f0der", "p*rra", "c@ralho"), MANTENHA assim.
+   NAO "corrija" a censura.
+
+Responda APENAS com um JSON valido no formato:
+[
+  {"id": 1, "texto": "..."},
+  {"id": 2, "texto": "..."}
+]
+
+Tweets:
+1. merece fluminense fudido 2019, 2009, 2017, 2018, 2024
+2. flamengo 20h comeback arirang 01hr, army flamenguista hoje soltando fogos!!!
+3. : rossi; emerson royal, léo ortiz, léo pereira alex sandro; pulgar, jorginho arrascaeta; luiz araújo, samuel lino pedro. : marcelo rangel; marcelinho, marllon, tchamba kayky almeida; picco, zé ricardo, patrick paula vitor bueno; jajá alef manga.
+4. flamengo remo escalados!
+5. indo ver flamengo remo porque nunca vou saber quando vou poder ver jogo remo novo hino remo bonito quero arranjar camisa remo porque foda flamengo vou torcer pro remo brincadeira bora flamengo leo jardim
+6. cbf quer salvar flamengo libra
+7. brasileirão - 7ª rodada: bola rolando grêmio 0x0 vitória
+8. camisa horrenda grêmio.
+9. começou! grêmio vitória estão campo.
+10. novos investimentos ou nao n impede nada dividir igualmente os lucros atuais novo sua jamanta animal, flamengo n vai ganhar msm q fluminense ou q remo, flamengo vai ganhar mais, só n vai ganhar 15 x mais
+11. palmeiras ligar sac cbf. comprou campeonato entregaram pro flamengo, segundo sua teoria.
+12. fluminense conseguiu tomar gol victor luís, resume muito clássico
+13. entendo importância financeira, mas podia ter diretriz proibindo patrocínio master pra poder deixar frente camisas futebol bem lisinhas grêmio hoje patrocínio master espetáculo
+14. po cara vdd 5 jogos maracanã mês você n for sócio pagar 1/2 vasco - r$ 50 flamengo - r$ 60 athletico - r$ 45 vasco - r$ 60 atlético mg - r$ 45 total - r$ 260 for inteiras r$ 520 for sócio 160 sócio + 60 vs vasco 220 só ingresso fica foda pro clt
+15. esses times mais modestos adoram dar vida contra gente pra vender caro derrota dps abrem as pernas pros outros adversários kkk foda flamengo. mas vamos vencer
+16. muito isso, vei, não sei flamengo aguenta
+17. daqui pouco corinthians campo!! chapecoense x corinthians campeonato brasileiro - 7ª rodada 21h30 arena condá amazon prime video
+18. nosso time gente campo! confira flamengo enfrentar remo, pelo brasileirão!
+19. só estou vendo ou vocês também?? vários flamenguistas fazendo vídeos falando bem torcida vasco kkkkkkkkk quer ganhar engajamentos mas está tranquilo torcida vasco braba mesmo
+20. deus, pfv deus faça corinthians ganhar cumeiras f0der sempre
+
+=====
+
+Voce e um normalizador de texto para um pipeline de analise de sentimentos sobre tweets de futebol em portugues.
+
+Para cada tweet recebido, devolva uma versao normalizada seguindo ESTAS regras:
+
+1. Corrija apenas erros ortograficos obvios e expanda APENAS as seguintes abreviacoes (lista fechada):
+   "vc"->"voce", "vcs"->"voces", "pq"->"porque", "pqp"->"pqp" (mantenha),
+   "tb"/"tbm"->"tambem", "q"->"que", "n"->"nao", "tmj"->"tamo junto",
+   "pra"->"para", "pro"->"para o", "msm"->"mesmo", "tlg"->"tipo logo".
+   NAO expanda mais nada. Em particular, NAO altere formatos de hora ("20h" continua "20h"),
+   data, numeros, siglas, nomes de times ou jogadores.
+
+2. NUNCA substitua girias, palavroes, xingamentos ou expressoes de raiva/zoacao por sinonimos
+   neutros. Eles carregam o sentimento que precisamos preservar. Mantenha EXATAMENTE as palavras
+   emocionais do original ("fudido", "foda", "lixo", "merda", "porra", "caralho", etc).
+
+3. Remova URLs, mencoes (@usuario) e hashtags vazias. Hashtags com conteudo semantico viram
+   texto (#golaco -> golaco).
+
+4. Mantenha emojis que carreguem sentimento.
+
+5. NAO altere o sentimento, ironia, sarcasmo nem o alvo do tweet (time, jogador).
+
+6. NAO invente conteudo. Se o tweet nao tiver texto util (so pontuacao, so nomes proprios,
+   so numeros), devolva o texto original inalterado.
+
+7. PRESERVE TODOS OS ACENTOS E CEDILHAS exatamente como no original.
+   "nao" no original continua "nao"; "não" no original continua "não".
+   NUNCA troque "grêmio" por "gremio", "são" por "sao", "também" por "tambem",
+   "araújo" por "araujo", etc.
+
+8. PRESERVE censura intencional do usuario. Se a palavra original tem digitos no
+   lugar de letras ou asteriscos (ex: "f0der", "p*rra", "c@ralho"), MANTENHA assim.
+   NAO "corrija" a censura.
+
+Responda APENAS com um JSON valido no formato:
+[
+  {"id": 1, "texto": "..."},
+  {"id": 2, "texto": "..."}
+]
+
+Tweets:
+21. não parece camisa grêmio longe sequer parece tricolor. crime clube deixou new balance fazer
+22. salve dono cruzeiro! saravá, seu tiriri.
+23. clássico! são paulo palmeiras trocam farpas antes clássico pelo brasileirão
+24. grêmio confirma promoção cinco jovens ao elenco principal
+25. arbitragem definida ! comissão arbitragem cbf, confirmou nome árbitro pernambucano rodrigo josé pereira lima comandar corinthians x flamengo, domingo, 20:30 horas neo química arena.
+26. flamengo confirmado escalado luiz araújo entre os titulares. samuel lino pela segunda vez consecutiva como titular. pedro também segue mantido entre os titulares pela quarta partida entres os tirantes era jardim. paquetá começará como opção banco reservas.
+27. formación confirmada agustín rossi (); emerson royal, léo ortiz, leo pereira, alex sandro; erick pulgar (), jorginho (); giorgian arrascaeta (); luiz araújo, pedro guilherme y samuel lino. dt: leonardo jardim ().
+28. racista fdp nessas merdas são paulo vota bolsonaristas golpista covarde
+29. só lembrando ninguém queria assumir santos após saída kleber xavier.
+30. porra , santos vai eliminado pelo athletic
+31. ainda chorando fdp? vai torcer pro corinthians doente, parece criança mimada
+32. todos fazem. mas palmeiras faz muuuuuuito mais… desde as entrevistas abel até “protocolo weverton” time grito
+33. coisa horrível fonte dourada camisa grêmio
+34. faz tudo! kauê penna (santos bravos) comentou cover jaehyun (boynextdoor) postou "menina vermelho". "incrível brother, muito bom poder te ajudar pronúncia orgulho".
+35. ingresso pra mim dia 21/03 uni? moro são paulo, tenho roupa mas não tenho ingresso
+36. opção mais provável, roubo favor palmeiras
+37. os times mais ladrões mund dps flamengo
+38. meu sonho afilhado hytalo santos
+39. hora almoço pensando como seria vida santos tivesse presidente ama clube, trabalhe brigar títulos voltar crescer
+40. maldição todo jogo grêmio narrado pelo dan dan

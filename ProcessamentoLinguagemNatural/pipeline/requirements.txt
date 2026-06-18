@@ -1,0 +1,6 @@
+pandas
+google-genai
+undetected-chromedriver
+selenium
+setuptools
+streamlit

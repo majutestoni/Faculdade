@@ -1,0 +1,42 @@
+Voce e um analisador de sentimentos de tweets de torcedores de futebol brasileiro, em portugues.
+
+Para cada tweet numerado abaixo, classifique o sentimento DO AUTOR em relacao ao time/jogador citado:
+- "positivo": elogio, comemoracao, orgulho, apoio
+- "negativo": critica, raiva, deboche contra o proprio alvo, frustracao
+- "neutro": informativo, pergunta, sem opiniao clara
+
+Cuidados:
+- Ironia e sarcasmo sao comuns ("que belezinha, 3 a 0 contra" = negativo).
+- Palavroes nem sempre sao negativos ("que golaco do caralho" = positivo).
+- Zoacao contra o rival e positiva para o time do autor, mas classifique em
+  relacao ao time citado no tweet.
+
+Responda APENAS com um JSON valido, com um item para CADA id, no formato:
+[
+  {"id": 1, "sentimento": "negativo", "confianca": 0.9},
+  {"id": 2, "sentimento": "positivo", "confianca": 0.7}
+]
+"confianca" vai de 0.0 a 1.0.
+
+Tweets:
+1. Baixou mais um pouco também! Mochila CR Flamengo adidas [adidas oficial • mercado livre] Por R$289,59 ̶(̶R̶$̶4̶9̶9̶)̶ parcelado em 6x sem juros Compre aqui: Cupom: MODANOMELI A promoção pode acabar a qualquer momento!
+2. Pica no lula, pica no Palmeiras, pica no Trump e vai picando kkkk
+3. DE VOLTA AOS TREINOS! Confira o calendário da semana para o futebol profissional do Flamengo!
+4. Mundial 2026: filão Manzambi estava escondido no banco suíço (crónica) Leia aqui: futebol internacional mundial suica bosniaeherzegovina tarikmuharemovic rubenvargas johanmanzambi granitxhaka erminmahmic
+5. Nardoni tem a alcunha de “melhor 5 da Argentina”. Teve de ser improvisado como 8, e ele e o Racing caíram. Villasanti sempre foi 5, na Seleção do Paraguai e no Grêmio. É onde melhor joga.
+6. Ele passou a temporada inteira se quebrando a cada 2 jogos Desfalcou o Santos no Paulistão Inteiro, ficou fora de vários jogos importantes do Santos Mas nao, agora ia ser diferente né? Pqp
+7. Porra , Corinthians Futebol Clube voce tá de sacanagem… Sport Club Corinthians Paulista (SCCP) Aprende aí
+8. saudades sociedade esportiva palmeiras
+9. FORA TODO MUNDO!! FORA DO VASCO , ELENCO DE VAGABUNDO!!!
+10. Por mim, quanto mais tempo demorar para o Vasco voltar a entrar em campo melhor. Paz terrível nessa pausa do Brasileirão. Saudade zero. Viva a Copa do Mundo e a falta de estresse com aqueles perebas horríveis
+11. Ta bom, agr copiar mais gritos de times além desse do corinthians
+12. Você vive em que mundo? O Corinthians está com mais de 3 bilhões em dívidas e não tem um presidente que não roubou desde 1994. Mas claro, os gaviões são um ótimo órgão fiscalizador né....
+13. Não era jogo do Fluminense
+14. para mim, as crianças mascotinhas parecem estar vestidas com o uniforme do cruzeiro
+15. Cantei essa pedra logo depois do último jogo do Vasco. Renato não suportaria passar 40 dias na ZONA DE REBAIXAMENTO. Vai fazer o que puder para ser demitido.
+16. | Santos tenta atravessar a compra de Ian Luccas, que pertence ao Cruzeiro, emprestado ao Athletic, por valores entre 1 e 3M de euros. O impasse fica na forma de pagamento, já que ambos só aceitam receber o valor do Peixe à vista. |
+17. Como foram os jogadores do Flamengo na primeira rodada da Copa do Mundo | Ge
+18. Até quando o Vasco vai ser refém desse bando de perninha?
+19. Mas o time é RUIM!!! Querem que ele fale o quê? kkkkk Só tem bagre nesse time do Vasco rs
+20. fico para morrer quando uns tonhos torcedores querem emplacar essa daí como amuleto do flamengo ou em placar que ela deu visibilidade para o FLAMENGO? amor ela não é o nosso amuleto supremo totói e Guto!!!
+21. Jogar uma Copa do mundo com 2 quase aposentados , Danilo Santos e Paqueta , é surreal , Danilo e Paqueta não são titulares nem no Equador

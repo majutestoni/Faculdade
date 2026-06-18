@@ -1,0 +1,41 @@
+Voce e um analisador de sentimentos de tweets de torcedores de futebol brasileiro, em portugues.
+
+Para cada tweet numerado abaixo, classifique o sentimento DO AUTOR em relacao ao time/jogador citado:
+- "positivo": elogio, comemoracao, orgulho, apoio
+- "negativo": critica, raiva, deboche contra o proprio alvo, frustracao
+- "neutro": informativo, pergunta, sem opiniao clara
+
+Cuidados:
+- Ironia e sarcasmo sao comuns ("que belezinha, 3 a 0 contra" = negativo).
+- Palavroes nem sempre sao negativos ("que golaco do caralho" = positivo).
+- Zoacao contra o rival e positiva para o time do autor, mas classifique em
+  relacao ao time citado no tweet.
+
+Responda APENAS com um JSON valido, com um item para CADA id, no formato:
+[
+  {"id": 1, "sentimento": "negativo", "confianca": 0.9},
+  {"id": 2, "sentimento": "positivo", "confianca": 0.7}
+]
+"confianca" vai de 0.0 a 1.0.
+
+Tweets:
+1. Grandes coisas eliminado, no próximo jogo tomaram no cu. Falando de Textor, que nem no Botafogo tá, descansa e se tá duro, dorme
+2. Os 2 laterais do Corinthians são muito melhores que os 3 laterais convocados. Gustavo Henrique hj BEM melhor que o Leo Pereira. Breno Bidon hj pratica um nivel de futebol que o Paqueta talvez nunca volte a jogar. Ontem li que dos 11 titulares, 7 sao do mesmo empresário.
+3. Não faz o menor sentido o que ele diz! Se tivesse culhão diria que o enteado seria o "laranja" da leila no Vasco. Só que não existe nenhum impedimento, tampouco fraude na relação para o cara ser um sócio oculto. O Palmeiras é SAF?
+4. Kkkkkkk que cara mais patético. Ele terá pesadelos quando o Vasco for vendido. Mal posso esperar a depressão que esse ser terá
+5. Tirando o fato de que salva sempre a seleção, foi só um dos responsáveis por aquela humilhação que o Botafogo sofreu em pleno Engenhão por 4x3 de virada
+6. passando mal que tem mais coisa do corinthians do que do próprio timekkkkkk a semi da copa do brasil estragou a cabeça do cara
+7. Fluminense é o último time a derrotar Bounou, goleiro de Marrocos e Al-Hilal
+8. Isso não tem absolutamente nada a ver com a “nova geração “. É só uma mãe estúpida, que como um cachorro adestrado, ensina seu filho jogar algo no lixo. Poderia ser a bandeira dos EUA, do VASCO, mas no caso, foi a bandeira do Orgulho. Ela precisa se preocupar, é nessas famílias
+9. Palmeiras ta aliciando mesmo clube sem ética nenhuma
+10. Preocupado com o quê? Kkkk Vasco teve um período de glória curtíssimo há 25 anos. Mais nada. Metem medo em quem? 5 rebaixamentos, 10 anos sem carioquinha, 15 sem título nacional, quase 30 sem internacional. Acorda para realidade.
+11. Mais o problema da seleção vai ser sempre um jogador do Flamengo
+12. Postou a estreia dos 2 citados. Só olhar lá. Domingo a noite e voce preocupado com o Palmeiras kkk. Se for bostafoguense, seu time tá falido. Se for flamerdista, tá preocupado demais com o jogador do palmeiras ou do bostafogo.
+13. O Memphis joga no Corinthians, mas o Corinthians foi campeão mundial no Japão, eai?
+14. Olho nele porque? Para o São Paulo ele não vai vir
+15. A base do Palmeiras tem trabalhado no sentido contrário em matéria de formação, trazendo os talentos de volta para o meio, mas quando chega no time principal o Abel não ajuda muito.
+16. Parabéns pelo troféu ganhou do finalista! Kkkkk!!! Finalista esse que foi o campeão, enquanto o Flamengo foi AMASSADO pelo Bayern logo nas oitavas! KAKAKAKAKA!!! E o Fluminense colocou quem mesmo na roda? Pois foi o que tomou taca do Chelsea! Kkkk!
+17. Quero saber quem do Vasco comeu a mulher do Bap.
+18. Mano, se um dia teu time ser vice do meu como foi para o Fluminense em algum tempinho atrás, tu se joga da ponte Rio-Niterói. Num mete essa!
+19. O otário acha mesmo que o nanico botafogo tem escolha de para quem tem que vender kkkkkk teu timinho tá falido pô, tá vendendo almoço para comprar a janta, tá com 6 transfer ban, não tá disputando nenhum título importante porque já foi eliminado, ou seja? Tá completamente fudido.
+20. Ele nasceu em 1997… Como pode ser uma homenagem ao Juninho Pernambucano? Nessa época ele jogava no VASCO…
